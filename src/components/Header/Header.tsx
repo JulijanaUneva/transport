@@ -4,7 +4,8 @@ import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { NavItem } from '../../types';
 import './Header.css';
-import logoImage from '../../assets/lkw connect logo photo.jpeg';
+// import logoImage from '../../assets/lkw connect logo photo.jpeg';
+import logoImage from '../../assets/logo-removebg-preview.png';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,7 +56,7 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="logo" onClick={handleHomeClick}>
           <img src={logoImage} alt="LKW Connect Logo" className="logo-image" />
-          <span className="logo-text">Julijana</span>
+         {/* <span className="logo-text">Julijana</span> */}
         </Link>
 
         {/* Desktop Navigation */}

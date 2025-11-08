@@ -1,8 +1,9 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Truck } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { TranslationKeys } from '../../types';
 import './Footer.css';
+import logoImage from '../../assets/logo-removebg-preview.png';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -38,10 +39,13 @@ export const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="footer-section">
               <div className="footer-brand">
-                <div className="footer-logo">
+                {/* <div className="footer-logo">
                   <Truck className="logo-icon" />
                   <span className="logo-text">Julijana</span>
-                </div>
+                </div> */}
+                <div className="footer-logo">
+  <img src={logoImage} alt="LKW Transport" className="logo-image" />
+</div>
                 <p className="footer-description">
                   {t('footer.description')}
                 </p>

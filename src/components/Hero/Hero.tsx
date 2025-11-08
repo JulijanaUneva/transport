@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
+// import { Phone, ArrowRight, Mail } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import './Hero.css';
 import heroImage from '../../assets/bus photo.jpeg';
@@ -25,7 +26,7 @@ export const Hero: React.FC = () => {
         <div className="hero-image-placeholder">
           <img 
             src={heroImage}
-            alt="Julijana Transport" 
+            alt="LKW CONNECT" 
             className="hero-image"
           />
         </div>
@@ -64,7 +65,8 @@ export const Hero: React.FC = () => {
               className="contact-button"
               aria-label="Contact us"
             >
-              <Phone className="contact-icon" />
+              {/* <Phone className="contact-icon" /> */}
+               <Mail className="contact-icon" />
             </button>
             <span className="contact-label">Contact</span>
           </div>

@@ -262,7 +262,7 @@
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .footer-main {
     padding: 3rem 0 2rem;
   }
@@ -297,7 +297,120 @@
   .social-links {
     justify-content: center;
   }
+} */
+
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 3rem 0 2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  /* Првата секција (Company Info) да зафаќа целиот ред */
+  .footer-section:first-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Quick Links и Services - 2 колони */
+  .footer-section:nth-child(2),
+  .footer-section:nth-child(3) {
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Contact Info - целиот ред, центрирано */
+  .footer-section:last-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    align-items: center;
+  }
+
+    /* Центрирање на логото */
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  /* Центрирање на линковите */
+  .footer-links {
+    align-items: center;
+  }
+  
+  /* Центрирање на contact items */
+  .contact-info {
+    align-items: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .footer-legal {
+    gap: 1rem;
+  }
+  
+  .map-overlay {
+    position: static;
+    margin: 1rem;
+    max-width: none;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
 }
+
+
+/* @media (max-width: 480px) {
+  .footer-main {
+    padding: 2rem 0 1rem;
+  }
+  
+  .footer-content {
+    padding: 0 0.5rem;
+  }
+  
+  .footer-section {
+    gap: 1rem;
+  }
+  
+  .footer-description {
+    font-size: 0.9rem;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .map-overlay {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin-top: 0;
+    align-self: center;
+  }
+} */
 
 @media (max-width: 480px) {
   .footer-main {
@@ -305,7 +418,17 @@
   }
   
   .footer-content {
+    grid-template-columns: 1fr;
     padding: 0 0.5rem;
+  }
+  
+  .footer-section:first-child,
+  .footer-section:nth-child(2),
+  .footer-section:nth-child(3),
+  .footer-section:last-child {
+    grid-column: auto;
+    text-align: center;
+    align-items: center;
   }
   
   .footer-section {
