@@ -25,24 +25,21 @@
   align-items: center;
   gap: 0.5rem; 
   text-decoration: none;
+  /* color: #1e40af; */
   font-weight: 700;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .logo:hover {
+  /* color: #3b82f6; */
   color: #6B3A7C;
-}
-
-.logo:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
-  border-radius: 0.5rem;
 }
 
 .logo-icon {
   width: 2rem;
   height: 2rem;
+  /* color: #1e40af; */
 }
 
 .logo-image {
@@ -53,6 +50,12 @@
 
 .logo-text {
   font-family: 'Inter', sans-serif;
+}
+
+.logo:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
+  border-radius: 0.5rem;
 }
 
 /* Desktop Navigation */
@@ -72,7 +75,8 @@
 }
 
 .nav-link:hover {
-  color: #6B3A7C;
+  /* color: #1e40af; */
+   color: #6B3A7C;
 }
 
 .nav-link::after {
@@ -82,7 +86,8 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #6B3A7C;
+  /* background: #1e40af; */
+   background: #6B3A7C;
   transition: width 0.3s ease;
 }
 
@@ -96,7 +101,7 @@
   border-radius: 0.25rem;
 }
 
-/* Navigation buttons */
+/* Navigation buttons (for anchor links) */
 .nav-button {
   background: none;
   border: none;
@@ -112,6 +117,7 @@
 }
 
 .nav-button:hover {
+  /* color: #1e40af; */
   color: #6B3A7C;
 }
 
@@ -122,6 +128,7 @@
   left: 0;
   width: 0;
   height: 2px;
+  /* background: #1e40af; */
   background: #6B3A7C;
   transition: width 0.3s ease;
 }
@@ -130,11 +137,7 @@
   width: 100%;
 }
 
-.nav-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
-  border-radius: 0.25rem;
-}
+/*drugiot ima tuka nav-button:focus*/
 
 /* Language Switcher */
 .language-switcher {
@@ -149,6 +152,7 @@
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem; 
+  /* padding: 0.4rem 0.5rem;  */
   cursor: pointer;
   transition: all 0.3s ease;
   color: #374151;
@@ -161,10 +165,7 @@
   border-color: #9ca3af;
 }
 
-.language-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25); 
-}
+/*drugiot ima tuka languahe-button:focus*/
 
 .language-icon {
   width: 1.5rem;
@@ -176,6 +177,7 @@
   top: 100%;
   right: 0;
   background: white;
+  /* border: 1px solid #d1d5db;*/
   border-radius: 0.3rem; 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   min-width: 120px;
@@ -193,6 +195,7 @@
   text-align: left;
   cursor: pointer;
   transition: background 0.2s ease;
+  /* font-size: 0.875rem;  */
   font-size: 1rem; 
 }
 
@@ -208,7 +211,23 @@
   border-left: 4px solid #b1d879;  
   padding-left: 10px; 
   transition: all 0.3s ease;
+  
 }
+
+/* 2 mal e ovde istiot element*/
+
+.language-button:focus {
+  outline: none; 
+  border-color: #9ca3af;
+}
+
+/* Опционално - убав focus effect наместо сина рамка */
+.language-button:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 3px rgba(107, 58, 124, 0.2);   */
+  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25); 
+}
+
 
 /* Mobile Menu Button */
 .mobile-menu-button {
@@ -222,14 +241,12 @@
 }
 
 .mobile-menu-button:hover {
+  /* color: #1e40af; */
   color: #6B3A7C;
+
 }
 
-.mobile-menu-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
-  border-radius: 0.5rem;
-}
+/*drugiot ima tuka .mobile-menu-button:focus*/
 
 /* Mobile Navigation */
 .nav-mobile {
@@ -241,49 +258,61 @@
   gap: 1rem;
 }
 
+/* .nav-link-mobile {
+  position: relative;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  transition: color 0.3s ease;
+}
+
+.nav-link-mobile:hover {
+  color: #6B3A7C;
+} */
+
 .nav-link-mobile {
   text-decoration: none;
   color: #374151;
   font-weight: 500;
   padding: 0.75rem 0;
   border-bottom: 1px solid #f3f4f6;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all 0.3s ease; /* ← промена */
+  position: relative; /* ← ново */
 }
 
-.nav-link-mobile:hover, 
-.nav-link-mobile:active {
-  color: #5D2F6E;
-  transform: scale(1.05);
-  padding-left: 0.5rem;
-  font-weight: 600;
-}
-
-.nav-link-mobile::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #5D2F6E;
-  transition: width 0.3s ease;
-}
-
-.nav-link-mobile:hover::after,
-.nav-link-mobile:active::after {
-  width: 100%;
-}
-
-.nav-link-mobile:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
-  border-radius: 0.25rem;
+.nav-link-mobile:hover {
+  color: #5D2F6E; /* ← промена */
+  transform: scale(1.05); /* ← ново */
+  padding-left: 0.5rem; /* ← ново */
+  font-weight: 600; /* ← ново */
 }
 
 .nav-link-mobile:last-child {
   border-bottom: none;
 }
+
+/* Mobile navigation buttons (for anchor links) */
+/* .nav-button-mobile {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  transition: color 0.3s ease;
+  font-size: inherit;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-button-mobile:hover {
+  color: #6B3A7C;
+} */
 
 .nav-button-mobile {
   background: none;
@@ -294,20 +323,96 @@
   font-weight: 500;
   padding: 0.75rem 0;
   border-bottom: 1px solid #f3f4f6;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* ← промена */
   font-size: inherit;
   font-family: inherit;
   width: 100%;
   text-align: left;
-  position: relative;
+  position: relative; /* ← ново */
 }
 
 .nav-button-mobile:hover {
-  color: #5D2F6E;
-  transform: scale(1.05);
-  padding-left: 0.5rem;
-  font-weight: 600;
+  color: #5D2F6E; /* ← промена */
+  transform: scale(1.05); /* ← ново */
+  padding-left: 0.5rem; /* ← ново */
+  font-weight: 600; /* ← ново */
 }
+
+/* .nav-button-mobile:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+  
+  .nav-mobile {
+    display: flex;
+  }
+  
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+  }
+  
+  .logo-image {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-dropdown {
+    right: -1rem;
+  }
+} */
+
+.nav-button-mobile:last-child {
+  border-bottom: none;
+}
+
+/* ===== Mobile Navigation - Added underline effect и focus styles ===== */
+.nav-link-mobile {
+  position: relative;
+}
+
+.nav-link-mobile::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6B3A7C;
+  transition: width 0.3s ease;
+}
+
+.nav-link-mobile:hover::after {
+  width: 100%;
+}
+
+.nav-link-mobile:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
+  border-radius: 0.25rem;
+}
+
+/* .nav-button-mobile {
+  position: relative;
+} */
 
 .nav-button-mobile::after {
   content: '';
@@ -316,12 +421,11 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #5D2F6E;
+  background: #6B3A7C;
   transition: width 0.3s ease;
 }
 
-.nav-button-mobile:hover::after,
-.nav-button-mobile:active::after {
+.nav-button-mobile:hover::after {
   width: 100%;
 }
 
@@ -331,8 +435,16 @@
   border-radius: 0.25rem;
 }
 
-.nav-button-mobile:last-child {
-  border-bottom: none;
+.mobile-menu-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
+  border-radius: 0.5rem;
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107, 58, 124, 0.25);
+  border-radius: 0.25rem;
 }
 
 /* Responsive */

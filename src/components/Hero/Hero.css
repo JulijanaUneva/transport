@@ -1,9 +1,11 @@
 .hero {
   position: relative;
   height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  background: #000; /* Fallback црна */
 }
 
 .hero-background {
@@ -12,10 +14,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
+  overflow: hidden;
 }
 
-.hero-overlay {
+/* ДОДАЈ OVERLAY за подобра читливост на текст */
+.hero-background::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -23,30 +28,23 @@
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(30, 64, 175, 0.8) 0%,
-    rgba(59, 130, 246, 0.6) 50%,
-    rgba(147, 197, 253, 0.4) 100%
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.4) 100%
   );
-  z-index: 1;
-}
-
-.hero-image-placeholder {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   width: 100%;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 140px;
+  pointer-events: none;
+}
+
+.hero-content * {
+  pointer-events: auto;
 }
 
 .hero-container {
@@ -70,7 +68,7 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-subtitle {
@@ -78,7 +76,7 @@
   line-height: 1.6;
   margin-bottom: 2.5rem;
   opacity: 0.95;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-actions {
@@ -150,11 +148,9 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15); 
-  /* background: rgba(183, 132, 167, 0.3); */
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3); 
-  /* border: 2px solid rgba(183, 132, 167, 0.5); */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); 
+  border: 2px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +168,7 @@
 .contact-icon {
   width: 2rem;
   height: 2rem;
-  color: #B784A7; /* Промени од white на лила */
+  color: #B784A7;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -189,7 +185,7 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 11;
 }
 
 .scroll-arrow {
@@ -213,7 +209,74 @@
   }
 }
 
-/* Responsive Design */
+/* ===== SLIDESHOW ===== */
+.hero-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slideshow-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 33.333%;
+  height: 100%;
+  position: relative;
+}
+
+.slide .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 11;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+.indicator-dot.active {
+  background: white;
+  width: 40px;
+  border-radius: 6px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .hero-container {
     flex-direction: column;
@@ -222,8 +285,25 @@
     gap: 3rem;
   }
   
-  .contact-shortcut {
+  /* .contact-shortcut {
     margin-left: 0;
+  } */
+
+  .hero-actions {
+    justify-content: center; /* ← Центрирани копчиња */
+  }
+
+    
+  .contact-shortcut {
+    position: fixed; /* ← Fixed позиција */
+    right: 1.5rem; /* ← Десно */
+    bottom: 4rem; /* ← Долу (над carousel indicators) */
+    margin-left: 0;
+    z-index: 12; /* ← Над сè */
+  }
+
+  .carousel-indicators {
+    bottom: 7rem;
   }
   
   .hero-title {
@@ -250,6 +330,11 @@
     font-size: 1rem;
   }
   
+  .contact-shortcut {
+    right: 1.5rem;
+    bottom: 4rem; /* ← Малку пониско */
+  }
+
   .contact-button {
     width: 70px;
     height: 70px;
@@ -259,17 +344,34 @@
     width: 1.75rem;
     height: 1.75rem;
   }
+  
+  .carousel-indicators {
+    bottom: 7rem;
+  }
+  
+  .indicator-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .indicator-dot.active {
+    width: 30px;
+  }
+  
+  /* Mobile image positioning */
+  .slide .hero-image {
+    object-position: center center;
+  }
 }
 
 @media (max-width: 480px) {
   .hero {
-    min-height: 90vh;
-    height: auto;
+    height: 100vh;
   }
 
   .hero-container {
     padding: 0 1rem;
-    min-height: calc(90vh - 80px);
+    justify-content: center;
   }
   
   .hero-title {
@@ -294,16 +396,52 @@
     max-width: 280px;
     justify-content: center;
   }
+
+  .contact-shortcut {
+    right: 1rem;
+    bottom: 4rem; /* ← Уште пониско */
+  }
   
   .contact-button {
     width: 60px;
     height: 60px;
-    min-width: 60px;
-    min-height: 60px;
   }
   
   .contact-icon {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .contact-label {
+    font-size: 0.75rem; /* ← Помал текст */
+  }
+  
+  /* .carousel-indicators {
+    bottom: 4rem;
+    gap: 0.5rem;
+  } */
+
+  .carousel-indicators {
+  position: absolute;
+  bottom: 7rem; /* ← ПРОМЕНА: од 6rem на 7rem */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 11;
+}
+  
+  .indicator-dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .indicator-dot.active {
+    width: 24px;
+  }
+  
+  /* Mobile specific image positioning */
+  .slide .hero-image {
+    object-position: center 40%;
   }
 }

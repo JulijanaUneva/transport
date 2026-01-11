@@ -12,7 +12,7 @@ export const AboutHero: React.FC = () => {
         <div className="about-hero-overlay"></div>
         <img 
           src={aboutHeroImage}
-          alt="Julijana Transport Company"
+          alt="LKW Connect Company"
           className="about-hero-image"
         />
       </div>
