@@ -90,7 +90,7 @@
   align-items: center;
   gap: 0.5rem;
   background: #fff;
-  color: #1e40af;
+  /* color: #1e40af; */
   border: none;
   border-radius: 0.75rem;
   padding: 1rem 2rem;
@@ -148,8 +148,10 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px); 
+  /* background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px);  */
+  background: rgba(0, 0, 0, 0.35); /* наместо blur */
+  backdrop-filter: none;
   border: 2px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
@@ -157,6 +159,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
+  outline: none;
 }
 
 .contact-button:hover {
@@ -168,8 +171,13 @@
 .contact-icon {
   width: 2rem;
   height: 2rem;
-  color: #B784A7;
+  /* color: #B784A7; */
+  color: #ffffff;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover .contact-icon {
+  color: #B784A7;
 }
 
 .contact-label {

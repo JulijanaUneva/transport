@@ -1,7 +1,14 @@
 .statistics {
   position: relative;
   padding: 6rem 0;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%); */
+   /* background: linear-gradient(
+    135deg,
+  rgba(189, 115, 176, 1) 0%,   
+    rgba(217, 70, 239, 0.9) 35%,   
+    rgba(88, 28, 135, 1) 70%,     
+    rgba(76, 29, 149, 1) 100%); */
+    background-color: #2e1065;
   color: white;
   overflow: hidden;
 }
@@ -21,7 +28,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%);
+  /* background: linear-gradient(135deg, rgba(30, 64, 175, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%); */
+   background: linear-gradient(
+135deg,
+    rgba(189, 115, 176, 0.85) 0%, 
+    rgba(217, 70, 239, 0.75) 35%, 
+    rgba(88, 28, 135, 0.9) 70%, 
+    rgba(76, 29, 149, 0.95) 100%
+  );
+
+}
+
+.statistics::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
 }
 
 .statistics-header {
@@ -51,7 +74,7 @@
   z-index: 2;
 }
 
-.statistic-card {
+/* .statistic-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -60,6 +83,27 @@
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  overflow: hidden;
+} */
+
+.statistic-card {
+  /* Намалена прозитност за да се гледаат убавите бои на градиентот зад картичката */
+  background: rgba(255, 255, 255, 0.07); 
+  
+  /* Малку поблаг blur за почист изглед */
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); /* За поддршка на Safari */
+  
+  /* Потенка и посуптилна рамка */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Помазна анимација */
   opacity: 0;
   transform: translateY(50px) scale(0.9);
   overflow: hidden;
@@ -76,10 +120,18 @@
   }
 }
 
-.statistic-card:hover {
+/* .statistic-card:hover {
   transform: translateY(-10px) scale(1.05);
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+} */
+
+/* Hover ефектот сега е „пожив“ */
+.statistic-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Посветла рамка на hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .stat-icon-container {
