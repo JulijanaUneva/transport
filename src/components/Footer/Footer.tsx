@@ -39,10 +39,6 @@ export const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="footer-section">
               <div className="footer-brand">
-                {/* <div className="footer-logo">
-                  <Truck className="logo-icon" />
-                  <span className="logo-text">Julijana</span>
-                </div> */}
                 <div className="footer-logo">
   <img src={logoImage} alt="LKW Transport" className="logo-image" />
 </div>
@@ -98,7 +94,9 @@ export const Footer: React.FC = () => {
               <h3 className="footer-title">{t('footer.contactInfo')}</h3>
               <div className="contact-info">
                 <div className="contact-item">
-                  <MapPin className="contact-icon" />
+                  {/* <MapPin className="contact-icon" /> */}
+                   <MapPin style={{ color: "#bd73b0" }}/> 
+                   {/* <MapPin style={{ color: "#bcd39b" }}/>  */}
                   <div className="contact-text">
                     <p>Hauptstraße 123</p>
                     <p>12345 Berlin, Germany</p>
@@ -106,7 +104,9 @@ export const Footer: React.FC = () => {
                 </div>
                 
                 <div className="contact-item">
-                  <Phone className="contact-icon" />
+                  {/* <Phone className="contact-icon" /> */}
+                   <Phone style={{ color: "#bd73b0" }}/>
+                   {/* <Phone style={{ color: "#bcd39b" }}/> */}
                   <div className="contact-text">
                     <p>+49 123 456 7890</p>
                     <span>Mon-Fri 8:00-18:00</span>
@@ -114,7 +114,9 @@ export const Footer: React.FC = () => {
                 </div>
                 
                 <div className="contact-item">
-                  <Mail className="contact-icon" />
+                  {/* <Mail className="contact-icon" /> */}
+                  <Mail  style={{ color: "#bd73b0" }}/>
+                  {/* <Mail style={{ color: "#bcd39b" }}/> */}
                   <div className="contact-text">
                     <p>info@transportco.com</p>
                     <span>24/7 response</span>

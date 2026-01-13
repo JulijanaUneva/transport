@@ -90,7 +90,6 @@
   align-items: center;
   gap: 0.5rem;
   background: #fff;
-  /* color: #1e40af; */
   border: none;
   border-radius: 0.75rem;
   padding: 1rem 2rem;
@@ -138,6 +137,9 @@
 /* Contact Shortcut */
 .contact-shortcut {
   display: flex;
+  position: fixed;
+  bottom: 3rem;
+  right: 4rem;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
@@ -174,6 +176,8 @@
   /* color: #B784A7; */
   color: #ffffff;
   transition: color 0.3s ease, transform 0.3s ease;
+   stroke: currentColor; /* ← ДОДАЈ ГО ОВА */
+  fill: none; /* ← ДОДАЈ ГО ОВА */
 }
 
 .contact-button:hover .contact-icon {

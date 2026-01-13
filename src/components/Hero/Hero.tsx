@@ -86,9 +86,10 @@ export const Hero: React.FC = () => {
               className="contact-button"
               aria-label="Contact us"
             >
-              <Mail className="contact-icon" />
+               <Mail/>
+              {/* <Mail className="contact-icon" /> */}
             </button>
-            <span className="contact-label">Contact</span>
+            {/* <span className="contact-label">Contact</span> */}
           </div>
         </div>
       </div>

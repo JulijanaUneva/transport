@@ -342,9 +342,9 @@ export const Contact: React.FC = () => {
             
             <div className="contact-methods">
               <div className="contact-method">
-                <div className="contact-icon">
-                  <Phone />
-                </div>
+                <div className="contact-icon"> 
+                  <Phone style={{ color: "white" }}/>
+                </div> 
                 <div className="contact-details">
                   <h4>{t('contact.phone')}</h4>
                   <p>+49 123 456 7890</p>
@@ -354,7 +354,7 @@ export const Contact: React.FC = () => {
               
               <div className="contact-method">
                 <div className="contact-icon">
-                  <Mail />
+                  <Mail style={{ color: "white" }}/>
                 </div>
                 <div className="contact-details">
                   <h4>{t('contact.email')}</h4>
@@ -365,7 +365,7 @@ export const Contact: React.FC = () => {
               
               <div className="contact-method">
                 <div className="contact-icon">
-                  <MapPin />
+                  <MapPin style={{ color: "white" }}/>
                 </div>
                 <div className="contact-details">
                   <h4>{t('contact.address')}</h4>

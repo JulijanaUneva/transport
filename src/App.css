@@ -136,8 +136,3 @@ img {
     opacity: 1;
   }
 }
-
-svg {
-  border: 2px solid red !important;
-  background: yellow !important;
-}

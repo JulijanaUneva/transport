@@ -1,6 +1,10 @@
 .services {
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
+  /* background: linear-gradient(135deg, #f4f8ee 0%, #e6efda 100%); */
+  background: linear-gradient(135deg, #f6f9f1 0%, #edf3e6 100%);
+ /* background: linear-gradient(135deg, #fafcf7 0%, #eef4e3 100%); */
+
   position: relative;
 }
 
@@ -88,7 +92,10 @@
 .service-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: #1e40af;
+  /* color: #1e40af; */
+  color: #bcd39b;
+  color: #bd73b0; 
+  /* color: #793f6ec9;  */
 }
 
 .service-content {
@@ -126,7 +133,10 @@
 }
 
 .feature-bullet {
-  color: #1e40af;
+  /* color: #1e40af; */
+  color: #bcd39b;
+  color: #bd73b0; 
+  color: #793f6ec9; 
   font-weight: 700;
   font-size: 1.2rem;
   line-height: 1;

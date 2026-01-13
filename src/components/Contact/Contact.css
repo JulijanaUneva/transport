@@ -62,7 +62,13 @@
 }
 
 .contact-icon {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
+ /* background: linear-gradient(135deg, #8b5cf6 0%, #bd73b0 100%); */
+ /* background: linear-gradient(135deg, #7c3aed 0%, #bd73b0 100%); */
+  /* background: linear-gradient(135deg, #a855f7 0%, #bd73b0 100%);  */
+ /* background: linear-gradient(135deg, #bcd39b 0%, #bd73b0 100%); */
+ /* background: linear-gradient(135deg, #bd73b0 0%, #6b21a8 100%); */
+  background:  #bd73b0; 
   color: white;
   padding: 0.75rem;
   border-radius: 0.5rem;
@@ -192,7 +198,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
+  background: #bd73b0;
   color: white;
   border: none;
   border-radius: 0.75rem;
