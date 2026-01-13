@@ -8,7 +8,8 @@
     rgba(217, 70, 239, 0.9) 35%,   
     rgba(88, 28, 135, 1) 70%,     
     rgba(76, 29, 149, 1) 100%); */
-    background-color: #2e1065;
+    /* background-color: #2e1065; */
+      background-color: #2d1d4c;
   color: white;
   overflow: hidden;
 }
@@ -53,7 +54,7 @@
   position: relative;
   z-index: 2;
 }
-
+/* 
 .statistics-title {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -62,6 +63,16 @@
 .statistics-subtitle {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+} */
+
+.statistics-header .statistics-title {
+  color: #bcd39b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.statistics-header .statistics-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .statistics-grid {

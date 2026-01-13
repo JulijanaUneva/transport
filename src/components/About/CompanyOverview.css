@@ -146,7 +146,14 @@
 .value-icon {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
+  background: linear-gradient(
+135deg,
+    rgba(189, 115, 176, 0.85) 0%, 
+    rgba(217, 70, 239, 0.75) 35%, 
+    rgba(88, 28, 135, 0.9) 70%, 
+    rgba(76, 29, 149, 0.95) 100%
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -202,7 +209,14 @@
 .cert-logo {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  /* background: linear-gradient(135deg, #059669 0%, #10b981 100%); */
+  background: linear-gradient(
+  135deg,
+  rgba(188, 211, 155, 0.85) 0%,   /* #bcd39b light */
+  rgba(163, 197, 115, 0.80) 35%,  /* medium green */
+  rgba(94, 135, 76, 0.90) 70%,    /* deep green */
+  rgba(63, 110, 58, 0.95) 100%    /* darker green */
+);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
