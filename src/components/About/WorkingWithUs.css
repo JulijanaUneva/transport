@@ -69,7 +69,13 @@
 .benefit-icon {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
+    background: linear-gradient(
+    135deg,
+    rgba(189, 115, 176, 0.9) 0%,   
+    rgba(138, 77, 125, 0.85) 40%, 
+    rgba(88, 28, 135, 0.95) 100%  
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -123,7 +129,8 @@
 .step-number {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
+  background: linear-gradient(135deg, #bcd39b 0%, #a7c082 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -193,7 +200,9 @@
 .partnership-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e40af;
+  /* color: #1e40af; */
+  color: #bd73b0;
+  text-shadow: 1px 1px 3px rgba(138, 77, 125, 0.3);
   margin-bottom: 1rem;
 }
 
@@ -263,7 +272,9 @@
 .cta-content h3 {
   font-size: 2.25rem;
   font-weight: 700;
-  color: #1e40af;
+  /* color: #1e40af; */
+  color: #bd73b0;
+  text-shadow: 1px 1px 3px rgba(138, 77, 125, 0.3);
   margin-bottom: 1rem;
 }
 
@@ -297,7 +308,9 @@
 }
 
 .primary-button {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+  background: linear-gradient(135deg, #c984bc 0%, #9b5a8e 50%, #632496 100%);
   color: white;
   box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
 }
@@ -309,14 +322,26 @@
 
 .secondary-button {
   background: white;
-  color: #1e40af;
-  border: 2px solid #1e40af;
+  border-radius: 0.75rem;
+  /* color: #1e40af;
+  border: 2px solid #1e40af; */
+  color: linear-gradient(135deg, #c984bc 0%, #9b5a8e 50%, #632496 100%);
+  border: 2px solid transparent;
+  /* border-image-source: linear-gradient(135deg, #c984bc 0%, #9b5a8e 50%, #632496 100%);
+  border-image-slice: 1; */
+  background: 
+    linear-gradient(white, white) padding-box, 
+    linear-gradient(135deg, #c984bc 0%, #9b5a8e 50%, #632496 100%) border-box;
 }
 
 .secondary-button:hover {
-  background: #1e40af;
+  /* background: #1e40af; */
+  background: linear-gradient(135deg, #c984bc 0%, #9b5a8e 50%, #632496 100%);
+  border-color: transparent;
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+  border: 2px solid transparent;
 }
 
 /* Mobile First Responsive Design */

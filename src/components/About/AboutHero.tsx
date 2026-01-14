@@ -2,6 +2,8 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { ArrowRight, Users, Target, Award } from 'lucide-react';
 import './AboutHero.css';
 import aboutHeroImage from '../../assets/lkw connect photo.jpeg';
+import { Link } from 'react-router-dom';
+
 
 export const AboutHero: React.FC = () => {
   const { t } = useLanguage();
@@ -60,10 +62,15 @@ export const AboutHero: React.FC = () => {
               </div>
             </div>
             
-            <button className="about-cta">
+            {/* <button className="about-cta">
               {t('about.hero.cta')}
               <ArrowRight className="cta-icon" />
-            </button>
+            </button> */}
+              <Link to="/#contact" className="about-cta">
+              {t('about.hero.cta')}
+              <ArrowRight className="cta-icon" />
+              </Link>
+
           </div>
         </div>
       </div>

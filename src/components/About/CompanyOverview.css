@@ -1,6 +1,6 @@
 .company-overview {
-  padding: 4rem 0;
-  background: white;
+  padding: 6rem 0;
+  background: #fafafa;
 }
 
 .company-overview .container {
@@ -12,14 +12,18 @@
 /* Company Story */
 .company-story {
   margin-bottom: 6rem;
+  background: white;
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .story-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .story-text {
@@ -33,27 +37,36 @@
 }
 
 .story-paragraphs p {
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 1.1rem;
+  color: #374151;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.story-paragraphs p:first-child::first-letter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #bd73b0;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
 }
 
 .story-image {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 .story-img {
   width: 100%;
-  height: 400px;
+  height: 450px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .story-image:hover .story-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .image-overlay {
@@ -61,8 +74,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-  padding: 2rem;
+  background: linear-gradient(to top, rgba(88, 28, 135, 0.95), transparent);
+  padding: 2.5rem;
   color: white;
 }
 
@@ -70,11 +83,12 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: #bcd39b;
 }
 
 .overlay-content p {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 1.05rem;
+  opacity: 0.95;
 }
 
 /* Mission & Vision */
@@ -85,38 +99,55 @@
 .mission-vision-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .mv-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: white;
   padding: 3rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  transition: all 0.3s ease;
+  border-radius: 1.5rem;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #bd73b0 0%, #bcd39b 100%);
 }
 
 .mv-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(189, 115, 176, 0.2);
+  border-color: rgba(189, 115, 176, 0.3);
 }
 
 .mv-card h3 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1e40af;
+  background: linear-gradient(135deg, #bd73b0 0%, #581c87 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
 }
 
 .mv-card p {
   color: #4b5563;
-  line-height: 1.7;
-  font-size: 1.1rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
-/* Company Values - Mobile First */
+/* Company Values */
 .company-values {
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   text-align: center;
   padding: 0 1rem;
 }
@@ -124,59 +155,80 @@
 .values-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .value-card {
   background: white;
   padding: 2.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(226, 232, 240, 0.5);
-  transition: all 0.3s ease;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(189, 115, 176, 0.1);
+  transition: all 0.4s ease;
   text-align: center;
+  position: relative;
+}
+
+.value-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #bd73b0, #bcd39b);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.value-card:hover::after {
+  opacity: 1;
 }
 
 .value-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(189, 115, 176, 0.15);
+  border-color: transparent;
 }
 
 .value-icon {
-  width: 4rem;
-  height: 4rem;
-  /* background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); */
-  background: linear-gradient(
-135deg,
-    rgba(189, 115, 176, 0.85) 0%, 
-    rgba(217, 70, 239, 0.75) 35%, 
-    rgba(88, 28, 135, 0.9) 70%, 
-    rgba(76, 29, 149, 0.95) 100%
-  );
+  width: 4.5rem;
+  height: 4.5rem;
+  background: linear-gradient(135deg, #bd73b0 0%, #581c87 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
   color: white;
+  box-shadow: 0 8px 25px rgba(189, 115, 176, 0.3);
+  transition: all 0.4s ease;
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(189, 115, 176, 0.4);
 }
 
 .value-icon svg {
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
 .value-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.375rem;
+  font-weight: 700;
   color: #1f2937;
   margin-bottom: 1rem;
 }
 
 .value-description {
   color: #6b7280;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 /* Certifications */
@@ -193,176 +245,114 @@
 
 .cert-item {
   background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(226, 232, 240, 0.5);
-  transition: all 0.3s ease;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(188, 211, 155, 0.2);
+  transition: all 0.4s ease;
   text-align: center;
 }
 
 .cert-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(188, 211, 155, 0.2);
+  border-color: #bcd39b;
 }
 
 .cert-logo {
-  width: 4rem;
-  height: 4rem;
-  /* background: linear-gradient(135deg, #059669 0%, #10b981 100%); */
-  background: linear-gradient(
-  135deg,
-  rgba(188, 211, 155, 0.85) 0%,   /* #bcd39b light */
-  rgba(163, 197, 115, 0.80) 35%,  /* medium green */
-  rgba(94, 135, 76, 0.90) 70%,    /* deep green */
-  rgba(63, 110, 58, 0.95) 100%    /* darker green */
-);
-  border-radius: 0.75rem;
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #bcd39b 0%, #6fa025 100%);
+  border-radius: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
   color: white;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  box-shadow: 0 8px 25px rgba(188, 211, 155, 0.3);
+  transition: all 0.4s ease;
+}
+
+.cert-item:hover .cert-logo {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(188, 211, 155, 0.4);
 }
 
 .cert-item h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.75rem;
 }
 
 .cert-item p {
   color: #6b7280;
-  line-height: 1.5;
-  font-size: 0.9rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-/* Mobile First Responsive Design */
-/* Tablet - 640px and up */
+/* Responsive Design */
 @media (min-width: 640px) {
   .company-overview {
     padding: 5rem 0;
   }
 
-  .company-overview .container {
-    padding: 0 1.5rem;
-  }
-
-  .company-values {
-    padding: 0;
-  }
-
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 2.5rem;
   }
 
   .mission-vision-cards {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .certifications-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .story-content {
-    padding: 0 1.5rem;
-  }
 }
 
-/* Large Tablet - 768px and up */
 @media (min-width: 768px) {
-  .company-overview {
-    padding: 5rem 0;
-  }
-
-  .company-overview .container {
-    padding: 0 2rem;
-  }
-
-  .company-story,
-  .mission-vision,
-  .company-values {
-    margin-bottom: 5rem;
+  .company-story {
+    padding: 5rem 3rem;
   }
 
   .values-grid {
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .value-card {
-    padding: 2rem;
+    gap: 2.5rem;
   }
 
   .mission-vision-cards {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .mv-card {
-    padding: 2rem;
-  }
-
-  .story-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 0 2rem;
-  }
-
-  .story-img {
-    height: 350px;
-  }
-}
-
-/* Laptop - 1024px and up */
-@media (min-width: 1024px) {
-  .company-overview {
-    padding: 6rem 0;
-  }
-
-  .company-overview .container {
-    padding: 0;
-  }
-
-  .company-story,
-  .mission-vision,
-  .company-values {
-    margin-bottom: 6rem;
-  }
-
-  .company-values {
-    padding: 0;
-  }
-
-  .values-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .value-card {
-    padding: 2.5rem;
-  }
-
-  .value-card:hover {
-    transform: translateY(-8px);
+    gap: 2.5rem;
   }
 
   .story-content {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    padding: 0;
-    max-width: 1200px;
-    margin: 0 auto;
   }
 
   .story-img {
     height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .company-overview {
+    padding: 6rem 0;
+  }
+
+  .company-story {
+    padding: 5rem 4rem;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .story-img {
+    height: 450px;
   }
 
   .certifications-grid {
@@ -370,21 +360,12 @@
   }
 }
 
-/* Desktop - 1280px and up */
 @media (min-width: 1280px) {
-  .values-grid {
-    gap: 2.5rem;
-  }
-
-  .value-card {
-    padding: 3rem;
-  }
-
   .mission-vision-cards {
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
   .mv-card {
-    padding: 2.5rem;
+    padding: 3.5rem;
   }
 }

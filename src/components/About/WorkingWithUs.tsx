@@ -1,6 +1,7 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { Handshake, Shield, Clock, Award, CheckCircle, ArrowRight } from 'lucide-react';
 import './WorkingWithUs.css';
+import { Link } from 'react-router-dom';
 
 export default function WorkingWithUs() {
   const { t } = useLanguage();
@@ -166,10 +167,13 @@ export default function WorkingWithUs() {
               {t('about.working.cta.description')}
             </p>
             <div className="cta-buttons">
-              <a href="/#contact" className="primary-button">
+              {/* <a href="/#contact" className="primary-button">
                 {t('about.working.cta.getStarted')}
-              </a>
-              <a href="tel:+49123456789" className="secondary-button">
+              </a> */}
+              <Link to="/#contact" className="primary-button">
+                {t('about.working.cta.getStarted')}
+              </Link>
+              <a href="tel:+38978475744" className="secondary-button">
                 {t('about.working.cta.callNow')}
               </a>
             </div>

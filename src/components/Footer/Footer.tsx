@@ -8,12 +8,35 @@ import logoImage from '../../assets/logo-removebg-preview.png';
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
 
+  // const socialLinks = [
+  //   { icon: Facebook, href: '#', label: 'Facebook' },
+  //   { icon: Twitter, href: '#', label: 'Twitter' },
+  //   { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  //   { icon: Instagram, href: '#', label: 'Instagram' }
+  // ];
+
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
-  ];
+  { 
+    icon: Facebook, 
+    href: 'https://www.facebook.com/lkwconnect', 
+    label: 'Facebook' 
+  },
+  { 
+    icon: Twitter, 
+    href: 'https://twitter.com/lkwconnect', 
+    label: 'Twitter' 
+  },
+  { 
+    icon: Linkedin, 
+    href: 'https://www.linkedin.com/company/lkw-connect', 
+    label: 'LinkedIn' 
+  },
+  { 
+    icon: Instagram, 
+    href: 'https://www.instagram.com/lkw_connect ', 
+    label: 'Instagram' 
+  }
+];
 
   const quickLinks: Array<{ labelKey: TranslationKeys; href: string }> = [
     { labelKey: 'nav.home', href: '/' },
@@ -40,8 +63,10 @@ export const Footer: React.FC = () => {
             <div className="footer-section">
               <div className="footer-brand">
                 <div className="footer-logo">
-  <img src={logoImage} alt="LKW Transport" className="logo-image" />
-</div>
+                  <a href="#">
+                  <img src={logoImage} alt="LKW Transport" className="logo-image" />
+                  </a>
+                </div>
                 <p className="footer-description">
                   {t('footer.description')}
                 </p>
@@ -93,43 +118,88 @@ export const Footer: React.FC = () => {
             <div className="footer-section">
               <h3 className="footer-title">{t('footer.contactInfo')}</h3>
               <div className="contact-info">
-                <div className="contact-item">
-                  {/* <MapPin className="contact-icon" /> */}
-                   <MapPin style={{ color: "#bd73b0" }}/> 
-                   {/* <MapPin style={{ color: "#bcd39b" }}/>  */}
+                {/* <div className="contact-item">                 
+                   <MapPin style={{ color: "#bd73b0" }}/>                   
                   <div className="contact-text">
                     <p>Hauptstraße 123</p>
                     <p>12345 Berlin, Germany</p>
                   </div>
-                </div>
+                </div> */}
+
+                {/* <div className="contact-item">
+    <a 
+      href="https://www.google.com/maps/search/?api=1&query=Hauptstraße+123+Berlin+Germany" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}
+    >
+      <MapPin style={{ color: "#bd73b0", marginRight: '10px' }} />
+      <div className="contact-text">
+        <p style={{ margin: 0 }}>Todor Janev 5</p>
+        <p style={{ margin: 0 }}>1400 Veles, Macedonia</p>
+      </div>
+    </a>
+  </div> */}
+
+  <div className="contact-item">
+  <a 
+    href="https://www.google.com/maps/search/?api=1&query=Todor+Janev+5,+1400+Veles,+Macedonia" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}
+  >
+    <MapPin style={{ color: "#bd73b0", marginRight: '10px' }} />
+    <div className="contact-text">
+      <p style={{ margin: 0 }}>{t('footer.addressLine1')}</p>
+      <p style={{ margin: 0 }}>{t('footer.addressLine2')}</p>
+    </div>
+  </a>
+</div>
                 
-                <div className="contact-item">
-                  {/* <Phone className="contact-icon" /> */}
-                   <Phone style={{ color: "#bd73b0" }}/>
-                   {/* <Phone style={{ color: "#bcd39b" }}/> */}
+                {/* <div className="contact-item">
+                   <Phone style={{ color: "#bd73b0" }}/>              
                   <div className="contact-text">
                     <p>+49 123 456 7890</p>
                     <span>Mon-Fri 8:00-18:00</span>
                   </div>
-                </div>
-                
+                </div> */}
                 <div className="contact-item">
-                  {/* <Mail className="contact-icon" /> */}
-                  <Mail  style={{ color: "#bd73b0" }}/>
-                  {/* <Mail style={{ color: "#bcd39b" }}/> */}
+  <a href="tel:+491234567890" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+    <Phone style={{ color: "#bd73b0", marginRight: '10px' }} />
+    <div className="contact-text">
+      <p style={{ margin: 0, fontWeight: 'bold' }}>+38978475744</p>
+      <span style={{ fontSize: '0.85em', opacity: 0.8 }}>Mon-Fri 8:00-18:00</span>
+    </div>
+  </a>
+</div>
+                
+                {/* <div className="contact-item">
+                  <Mail  style={{ color: "#bd73b0" }}/>             
                   <div className="contact-text">
                     <p>info@transportco.com</p>
                     <span>24/7 response</span>
                   </div>
-                </div>
+                </div> */}
+
+                <div className="contact-item">
+    <a href="mailto:info@transportco.com" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+      <Mail style={{ color: "#bd73b0", marginRight: '10px' }} />
+      <div className="contact-text">
+        <p style={{ margin: 0 }}>lkwconnectbg@gmail.com</p>
+        <span style={{ fontSize: '0.85em', opacity: 0.8 }}>8-18h response</span>
+      </div>
+    </a>
+  </div>
+</div>
+
               </div>
             </div>
           </div>
         </div>
-      </div>
+      
 
       {/* Google Maps Section */}
-      <div className="footer-map">
+      {/* <div className="footer-map">
         <div className="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.0974576548!2d13.404954!3d52.520008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBrandenburger%20Tor!5e0!3m2!1sen!2sde!4v1635789123456!5m2!1sen!2sde"
@@ -158,14 +228,45 @@ export const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div className="footer-map">
+  <div className="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.123456789!2d21.77258!3d41.71648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1355db741764666b%3A0xe54955745143a595!2z0KLQvtC00L7RgCDQrNCw0L3QtdCyIDUsINCS0LXQu9C10YE!5e0!3m2!1smk!2smk!4v1705270000000!5m2!1smk!2smk"
+      width="100%"
+      height="300"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Company Location"
+      className="google-map"
+    ></iframe>
+    
+    <div className="map-overlay">
+      <div className="map-info">
+        <h4>Посетете ја нашата канцеларија</h4>
+        <p>Тодор Јанев 5, 1400 Велес</p>
+        <a 
+          href="https://www.google.com/maps/search/?api=1&query=Todor+Janev+5+Veles+Macedonia"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="map-directions"
+        >
+          Насоки за движење (Directions)
+        </a>
       </div>
+    </div>
+  </div>
+</div>
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              <p>&copy; {new Date().getFullYear()} Julijana Transport. {t('footer.rights')}</p>
+              <p>&copy; {new Date().getFullYear()} Julijana {t('footer.rights')}</p>
             </div>
             
             <div className="footer-legal">

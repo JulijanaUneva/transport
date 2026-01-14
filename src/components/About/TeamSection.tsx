@@ -25,16 +25,6 @@ export default function TeamSection() {
       phone: "+49 123 456 790",
       linkedin: "#",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      id: 3,
-      name: "Thomas Schmidt",
-      position: t('about.team.member3.position'),
-      bio: t('about.team.member3.bio'),
-      email: "thomas.schmidt@transport.de",
-      phone: "+49 123 456 791",
-      linkedin: "#",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
     }
   ];
 

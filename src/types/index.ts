@@ -229,6 +229,7 @@ export type TranslationKeys =
   | 'contact.form.subjectPlaceholder'
   | 'contact.form.messagePlaceholder'
   | 'contact.form.send'
+  | 'contact.form.subjects.other'
   | 'footer.description'
   | 'footer.quickLinks'
   | 'footer.services'
@@ -240,6 +241,8 @@ export type TranslationKeys =
   | 'stats.yearsExperience'
   | 'stats.happyClients'
   | 'stats.vehicles'
+  | 'footer.addressLine1'
+  | 'footer.addressLine2'
   | 'stats.countries';
 
 export interface NavItem {

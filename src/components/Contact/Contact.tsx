@@ -369,8 +369,8 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="contact-details">
                   <h4>{t('contact.address')}</h4>
-                  <p>Hauptstraße 123</p>
-                  <span>12345 Berlin, Germany</span>
+                  <p>Todor Janev 5</p>
+                  <span>1400 Veles, Macedonia</span>
                 </div>
               </div>
             </div>
@@ -455,13 +455,13 @@ export const Contact: React.FC = () => {
                     className="form-input form-select"
                   >
                     <option value="">{t('contact.form.subjectPlaceholder')}</option>
-                    <option value="road-transport">Road Transport</option>
-                    <option value="logistics">Logistics Solutions</option>
-                    <option value="international">International Shipping</option>
-                    <option value="express">Express Delivery</option>
-                    <option value="specialized">Specialized Transport</option>
-                    <option value="consulting">Transport Consulting</option>
-                    <option value="other">Other</option>
+                    <option value="road-transport">{t('services.roadTransport.title')}</option>
+                    <option value="logistics">{t('services.logistics.title')}</option>
+                    <option value="international">{t('services.international.title')}</option>
+                    <option value="express">{t('services.express.title')}</option>
+                    <option value="specialized">{t('services.specialized.title')}</option>
+                    <option value="consulting">{t('services.consulting.title')}</option>
+                    <option value="other">{t('contact.form.subjects.other')}</option>
                   </select>
                 </div>
               </div>

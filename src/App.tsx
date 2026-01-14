@@ -8,11 +8,13 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import About from './pages/About';
 import './App.css';
+import { ScrollToHash } from './ScrollToHash';
 
 function App() {
   return (
     <LanguageProvider>
       <Router>
+         <ScrollToHash /> 
         <div className="App">
           <Header />
           <main>
