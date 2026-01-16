@@ -29,19 +29,61 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
+    cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  width: fit-content;
 }
 
-.logo-icon {
+.footer-logo::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #bd73b0 0%, #bcd39b 100%);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.footer-logo:hover::after {
+  width: 100%;
+}
+
+.footer-logo:hover {
+  transform: translateY(-3px);
+}
+
+.footer-logo img {
+  transition: all 0.4s ease;
+}
+
+.footer-logo:hover img {
+  transform: scale(1.05) rotate(2deg);
+  filter: brightness(1.1);
+}
+
+.footer-logo span {
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover span {
+  color: #bd73b0;
+  letter-spacing: 0.5px;
+}
+
+/* .logo-icon {
   width: 2rem;
   height: 2rem;
   color: #3b82f6;
-}
+} */
 
-.logo-text {
+/* .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
-}
+} */
 
 .footer-description {
   color: #d1d5db;
@@ -68,7 +110,8 @@
 }
 
 .social-link:hover {
-  background: #3b82f6;
+  /* background: #3b82f6; */
+  background: #bd73b0;
   color: white;
   transform: translateY(-2px);
 }
@@ -82,7 +125,8 @@
 .footer-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: white;
+  /* color: white; */
+  color: #bcd39b;
   margin-bottom: 1rem;
 }
 
@@ -103,8 +147,17 @@
 }
 
 .footer-link:hover {
-  color: #3b82f6;
+   color: #bd73b0;
+   transition: color 0.3s ease; 
+    font-weight: bold;
 }
+
+/* .footer-links:hover {
+   color: #bd73b0;
+   transition: color 0.3s ease; 
+   transform: translateY(-2px);
+   font-weight: bold;
+} */
 
 .footer-service {
   color: #d1d5db;
@@ -126,26 +179,26 @@
   gap: 0.75rem;
  }
 
-.contact-item a:hover {
-  opacity: 0.8;
-}
+/* .contact-item a:hover {
+  opacity: 0.9;
+} */
 
 .contact-item a:hover .contact-text p {
   color: #bd73b0;
   transition: color 0.3s ease; 
-}
+} 
 
 .contact-item a {
   cursor: pointer;
 }
 
-.contact-icon {
+/* .contact-icon {
   width: 1.25rem;
   height: 1.25rem;
   color: #3b82f6;
   margin-top: 0.125rem;
   flex-shrink: 0;
-}
+} */
 
 .contact-text p {
   color: #d1d5db;
@@ -345,8 +398,13 @@
   }
 
     /* Центрирање на логото */
-  .footer-logo {
+  /* .footer-logo {
     justify-content: center;
+  } */
+
+   .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
   }
   
   /* Центрирање на линковите */

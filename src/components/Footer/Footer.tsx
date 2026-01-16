@@ -82,7 +82,8 @@ export const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <social.icon className="social-icon" />
+                    <social.icon className="social-icon" /> 
+                     
                   </a>
                 ))}
               </div>
@@ -150,12 +151,12 @@ export const Footer: React.FC = () => {
   >
     <MapPin style={{ color: "#bd73b0", marginRight: '10px' }} />
     <div className="contact-text">
-      <p style={{ margin: 0 }}>{t('footer.addressLine1')}</p>
+      <p style={{ margin: 0, fontWeight: 'bold'}}>{t('footer.addressLine1')}</p>
       <p style={{ margin: 0 }}>{t('footer.addressLine2')}</p>
     </div>
   </a>
 </div>
-                
+               
                 {/* <div className="contact-item">
                    <Phone style={{ color: "#bd73b0" }}/>              
                   <div className="contact-text">
@@ -168,7 +169,7 @@ export const Footer: React.FC = () => {
     <Phone style={{ color: "#bd73b0", marginRight: '10px' }} />
     <div className="contact-text">
       <p style={{ margin: 0, fontWeight: 'bold' }}>+38978475744</p>
-      <span style={{ fontSize: '0.85em', opacity: 0.8 }}>Mon-Fri 8:00-18:00</span>
+      <span style={{ fontSize: '0.85em', opacity: 0.8 }}>Mo-Fr 8:00-18:00</span>
     </div>
   </a>
 </div>
@@ -185,7 +186,7 @@ export const Footer: React.FC = () => {
     <a href="mailto:info@transportco.com" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
       <Mail style={{ color: "#bd73b0", marginRight: '10px' }} />
       <div className="contact-text">
-        <p style={{ margin: 0 }}>lkwconnectbg@gmail.com</p>
+        <p style={{ margin: 0, fontWeight: 'bold' }}>lkwconnectbg@gmail.com</p>
         <span style={{ fontSize: '0.85em', opacity: 0.8 }}>8-18h response</span>
       </div>
     </a>

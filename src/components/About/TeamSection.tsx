@@ -48,14 +48,14 @@ export default function TeamSection() {
                   className="member-image"
                 />
                 <div className="image-overlay">
-                  <div className="social-links">
-                    <a href={`mailto:${member.email}`} className="social-link">
+                  <div className="team-social-links">
+                    <a href={`mailto:${member.email}`} className="team-social-link">
                       <Mail size={18} />
                     </a>
-                    <a href={`tel:${member.phone}`} className="social-link">
+                    <a href={`tel:${member.phone}`} className="team-social-link">
                       <Phone size={18} />
                     </a>
-                    <a href={member.linkedin} className="social-link">
+                    <a href={member.linkedin} className="team-social-link">
                       <Linkedin size={18} />
                     </a>
                   </div>

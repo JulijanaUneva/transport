@@ -1,6 +1,25 @@
+
+import 'swiper/css';
+
+import 'swiper/css/navigation';
+
+import 'swiper/css/pagination';
+
+import 'swiper/css/effect-coverflow';
 import { useLanguage } from '../../hooks/useLanguage';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, EffectCoverflow} from 'swiper/modules';
+import { ArrowRight } from 'lucide-react';
+
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/effect-coverflow';  
+
 import './TradeFairs.css';
+
+// 👇 ДОДАЈ ГИ ТВОИТЕ СЛИКИ ОВДЕ - ЗАМЕНИ ГИ ПАТЕКИТЕ
 import eventPhoto1 from '../../assets/community event photo 1.jpeg';
 import eventPhoto2 from '../../assets/community event photo 2.jpeg';
 import eventPhoto3 from '../../assets/community event photo 3.jpeg';
@@ -13,163 +32,184 @@ import eventPhoto8 from '../../assets/community event photo 8.jpeg';
 export default function TradeFairs() {
   const { t } = useLanguage();
 
-  const tradeFairs = [
-    {
-      id: 1,
-      name: "transport logistic 2024",
-      location: "Munich, Germany",
-      date: "May 7-10, 2024",
-      description: "The world's leading trade fair for logistics, mobility, IT and supply chain management",
-      status: "completed",
-      image: eventPhoto1
-    },
-    {
-      id: 2,
-      name: "Logistics Europe 2024",
-      location: "Amsterdam, Netherlands",
-      date: "September 15-17, 2024",
-      description: "European logistics and transport exhibition showcasing latest innovations",
-      status: "completed",
-      image: eventPhoto2
-    },
-    {
-      id: 3,
-      name: "IAA Transportation 2024",
-      location: "Hannover, Germany",
-      date: "September 17-22, 2024",
-      description: "International Motor Show for Commercial Vehicles",
-      status: "completed",
-      image: eventPhoto3
-    },
-    {
-      id: 4,
-      name: "European Transport Conference",
-      location: "Vienna, Austria",
-      date: "March 12-14, 2025",
-      description: "Annual conference bringing together transport professionals across Europe",
-      status: "upcoming",
-      image: eventPhoto4
-    },
-    {
-      id: 5,
-      name: "Green Logistics Summit",
-      location: "Copenhagen, Denmark",
-      date: "June 20-22, 2025",
-      description: "Focus on sustainable transport solutions and environmental initiatives",
-      status: "upcoming",
-      image: eventPhoto5
-    },
-    {
-      id: 6,
-      name: "Digital Transport Expo",
-      location: "Berlin, Germany", 
-      date: "October 8-10, 2025",
-      description: "Showcasing digital transformation in logistics and transportation",
-      status: "upcoming",
-      image: eventPhoto6
-    }
+  // 👇 ДОДАЈ ПОВЕЌЕ СЛИКИ АКО САКАШ
+  const eventPhotos = [
+    { id: 1, image: eventPhoto1, alt: 'Transport Logistic Event' },
+    { id: 2, image: eventPhoto2, alt: 'Logistics Europe' },
+    { id: 3, image: eventPhoto3, alt: 'IAA Transportation' },
+    { id: 4, image: eventPhoto4, alt: 'European Transport Conference' },
+    { id: 5, image: eventPhoto5, alt: 'Green Logistics Summit' },
+    { id: 6, image: eventPhoto6, alt: 'Digital Transport Expo' },
+    { id: 7, image: eventPhoto7, alt: 'Community Event' },
+    { id: 8, image: eventPhoto8, alt: 'Networking Event' },
   ];
 
-  const upcomingFairs = tradeFairs.filter(fair => fair.status === 'upcoming');
-  const completedFairs = tradeFairs.filter(fair => fair.status === 'completed');
-
   return (
-    <section className="trade-fairs">
-      <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">{t('about.tradeFairs.title')}</h2>
-          <p className="section-description">
+    <section className="trade-fairs-gallery">
+      <div className="gallery-container">
+        {/* Header */}
+        <div className="gallery-header">
+          <h2 className="gallery-title">{t('about.tradeFairs.title')}</h2>
+          <p className="gallery-description">
             {t('about.tradeFairs.description')}
           </p>
         </div>
 
-        {/* Upcoming Events */}
-        <div className="events-section">
-          <h3 className="events-title">
-            <Calendar className="title-icon" />
-            {t('about.tradeFairs.upcoming')}
-          </h3>
-          <div className="events-grid">
-            {upcomingFairs.map((fair) => (
-              <div key={fair.id} className="event-card upcoming">
-                <div className="event-image-container">
-                  <img src={fair.image} alt={fair.name} className="event-image" />
-                  <div className="event-status">{t('about.tradeFairs.upcomingBadge')}</div>
-                </div>
-                <div className="event-content">
-                  <h4 className="event-name">{fair.name}</h4>
-                  <div className="event-details">
-                    <div className="event-detail">
-                      <MapPin size={16} />
-                      <span>{fair.location}</span>
-                    </div>
-                    <div className="event-detail">
-                      <Calendar size={16} />
-                      <span>{fair.date}</span>
+        {/* Swiper Slider */}
+        <div className="swiper-wrapper-container">
+          {/* <Swiper
+            modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView="auto"
+            coverflowEffect={{
+              rotate: 15,
+              stretch: 0,
+              depth: 200,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            speed={800}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                effect: 'slide',
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                effect: 'slide',
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+                effect: 'coverflow',
+              },
+            }}
+            className="events-swiper"
+          > */}
+<Swiper
+  modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+  effect="coverflow"
+  grabCursor={true}
+  centeredSlides={true}
+  slidesPerView="auto"
+  coverflowEffect={{
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  }}
+  navigation={{
+    nextEl: '.swiper-button-next-custom',
+    prevEl: '.swiper-button-prev-custom',
+  }}
+  pagination={{
+    clickable: true,
+    dynamicBullets: true,
+  }}
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  }}
+  loop={true}
+  speed={800}
+  breakpoints={{
+    320: {
+      effect: 'slide',
+      slidesPerView: 1.15,
+      spaceBetween: 15,
+      centeredSlides: true,
+      
+    },
+    640: {
+      effect: 'slide',
+      slidesPerView: 1.8,
+      spaceBetween: 20,
+      centeredSlides: true,
+    },
+    768: {
+      effect: 'coverflow',
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 15,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+    },
+    1024: {
+      effect: 'coverflow',
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 250,
+        modifier: 1,
+        slideShadows: true,
+      },
+    },
+  }}
+  className="events-swiper"
+>
+            {eventPhotos.map((photo) => (
+              <SwiperSlide key={photo.id}>
+                <div className="event-slide">
+                  <div className="slide-image-wrapper">
+                    <img 
+                      src={photo.image} 
+                      alt={photo.alt}
+                      loading="lazy"
+                    />
+                    <div className="slide-overlay">
+                      <div className="overlay-content">
+                        <span className="view-text">View Event</span>
+                      </div>
                     </div>
                   </div>
-                  <p className="event-description">{fair.description}</p>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+
+            {/* Custom Navigation Buttons */}
+            <div className="swiper-button-prev-custom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </div>
+            <div className="swiper-button-next-custom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </div>
+          </Swiper>
         </div>
 
-        {/* Past Events */}
-        <div className="events-section">
-          <h3 className="events-title">
-            <Users className="title-icon" />
-            {t('about.tradeFairs.recent')}
-          </h3>
-          <div className="events-grid">
-            {completedFairs.map((fair) => (
-              <div key={fair.id} className="event-card completed">
-                <div className="event-image-container">
-                  <img src={fair.image} alt={fair.name} className="event-image" />
-                  <div className="event-status completed-status">{t('about.tradeFairs.completedBadge')}</div>
-                </div>
-                <div className="event-content">
-                  <h4 className="event-name">{fair.name}</h4>
-                  <div className="event-details">
-                    <div className="event-detail">
-                      <MapPin size={16} />
-                      <span>{fair.location}</span>
-                    </div>
-                    <div className="event-detail">
-                      <Calendar size={16} />
-                      <span>{fair.date}</span>
-                    </div>
-                  </div>
-                  <p className="event-description">{fair.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="events-cta">
-          <div className="cta-content">
-            <h3>{t('about.tradeFairs.cta.title')}</h3>
-            <p>
-              {t('about.tradeFairs.cta.description')}
-            </p>
-            <a href="/#contact" className="cta-button">
-              {t('about.tradeFairs.cta.button')}
-            </a>
-          </div>
-        </div>
-
-        {/* Photo Gallery */}
-        <div className="events-section">
-          <h3 className="events-title">
-            <Users className="title-icon" />
-            {t('about.tradeFairs.eventGallery')}
-          </h3>
-          <div className="photo-gallery">
-            <img src={eventPhoto7} alt="Community Event" className="gallery-photo" />
-            <img src={eventPhoto8} alt="Community Event" className="gallery-photo" />
-          </div>
+        {/* CTA Button */}
+        <div className="gallery-cta">
+          <a href="/#contact" className="cta-button">
+            {t('about.tradeFairs.cta.button')}
+            <ArrowRight size={20} />
+          </a>
         </div>
       </div>
     </section>
