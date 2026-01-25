@@ -176,8 +176,7 @@
   /* color: #B784A7; */
   color: #ffffff;
   transition: color 0.3s ease, transform 0.3s ease;
-   stroke: currentColor; /* ← ДОДАЈ ГО ОВА */
-  fill: none; /* ← ДОДАЈ ГО ОВА */
+   stroke: currentColor; 
 }
 
 .contact-button:hover .contact-icon {
@@ -296,22 +295,17 @@
     justify-content: center;
     gap: 3rem;
   }
-  
-  /* .contact-shortcut {
-    margin-left: 0;
-  } */
 
   .hero-actions {
-    justify-content: center; /* ← Центрирани копчиња */
-  }
+    justify-content: center; 
+ }
 
-    
   .contact-shortcut {
-    position: fixed; /* ← Fixed позиција */
-    right: 1.5rem; /* ← Десно */
-    bottom: 4rem; /* ← Долу (над carousel indicators) */
+    position: fixed; 
+    right: 1.5rem; 
+    bottom: 4rem; 
     margin-left: 0;
-    z-index: 12; /* ← Над сè */
+    z-index: 12; 
   }
 
   .carousel-indicators {
@@ -344,7 +338,7 @@
   
   .contact-shortcut {
     right: 1.5rem;
-    bottom: 4rem; /* ← Малку пониско */
+    bottom: 4rem; 
   }
 
   .contact-button {
@@ -411,7 +405,7 @@
 
   .contact-shortcut {
     right: 1rem;
-    bottom: 4rem; /* ← Уште пониско */
+    bottom: 4rem; 
   }
   
   .contact-button {
@@ -425,17 +419,12 @@
   }
 
   .contact-label {
-    font-size: 0.75rem; /* ← Помал текст */
+    font-size: 0.75rem; 
   }
-  
-  /* .carousel-indicators {
-    bottom: 4rem;
-    gap: 0.5rem;
-  } */
 
   .carousel-indicators {
   position: absolute;
-  bottom: 7rem; /* ← ПРОМЕНА: од 6rem на 7rem */
+  bottom: 7rem; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;

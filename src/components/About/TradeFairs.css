@@ -5,7 +5,6 @@
   overflow: hidden;
 }
 
-/* Decorative background */
 .trade-fairs-gallery::before {
   content: '';
   position: absolute;
@@ -23,7 +22,6 @@
   padding: 0 1rem;
 }
 
-/* Header */
 .gallery-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -50,7 +48,6 @@
   line-height: 1.7;
 }
 
-/* Swiper Container */
 .swiper-wrapper-container {
   position: relative;
   padding: 3rem 0;
@@ -62,7 +59,6 @@
   padding: 2rem 0 4rem;
 }
 
-/* Slide */
 .event-slide {
   width: 100%;
   height: 100%;
@@ -93,10 +89,9 @@
 }
 
 .slide-image-wrapper:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* Overlay */
 .slide-overlay {
   position: absolute;
   inset: 0;
@@ -130,7 +125,7 @@
   letter-spacing: 1px;
 }
 
-/* Custom Navigation Buttons */
+/* Navigation Buttons */
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
   position: absolute;
@@ -184,6 +179,8 @@
 
 .swiper-pagination {
   bottom: 0 !important;
+  position: relative;
+  margin-top: 2rem;
 }
 
 .swiper-pagination-bullet {
@@ -197,7 +194,7 @@
   border-radius: 6px;
 }
 
-/* CTA Section */
+/* CTA Button */
 .gallery-cta {
   text-align: center;
   margin-top: 3rem;
@@ -248,30 +245,18 @@
   transform: translateX(5px);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .swiper-button-prev-custom,
-  .swiper-button-next-custom {
-    width: 3rem;
-    height: 3rem;
-  }
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 
-  .swiper-button-prev-custom {
-    left: 1rem;
-  }
-
-  .swiper-button-next-custom {
-    right: 1rem;
-  }
-
-  .slide-image-wrapper {
-    height: 350px;
-  }
-}
-
-@media (max-width: 768px) {
+/* МОБИЛНИ (0-767px) - Обичен Carousel */
+@media (max-width: 767px) {
   .trade-fairs-gallery {
     padding: 4rem 0;
+  }
+
+  .gallery-header {
+    margin-bottom: 3rem;
   }
 
   .gallery-title {
@@ -280,28 +265,49 @@
 
   .gallery-description {
     font-size: 1.1rem;
+    padding: 0 1rem;
   }
 
-  .gallery-header {
-    margin-bottom: 3rem;
+  .swiper-wrapper-container {
+    padding: 2rem 0;
   }
 
-  .swiper-button-prev-custom,
-  .swiper-button-next-custom {
-    width: 2.5rem;
-    height: 2.5rem;
+  .events-swiper {
+    padding: 1.5rem 0 3rem;
   }
 
-  .swiper-button-prev-custom {
-    left: 0.5rem;
-  }
-
-  .swiper-button-next-custom {
-    right: 0.5rem;
+  /* Мобилен - 1 слика full width */
+  .swiper-slide {
+    width: 100%;
+    max-width: 100%; 
+    flex-shrink: 0;
   }
 
   .slide-image-wrapper {
-    height: 300px;
+    max-width: 90%;
+    margin: 0 auto;
+    height: 380px;
+  }
+
+  /* Navigation buttons - помали */
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .swiper-button-prev-custom {
+    left: 0.75rem;
+  }
+
+  .swiper-button-next-custom {
+    right: 0.75rem;
+  }
+
+  .swiper-button-prev-custom svg,
+  .swiper-button-next-custom svg {
+    width: 20px;
+    height: 20px;
   }
 
   .cta-button {
@@ -310,6 +316,7 @@
   }
 }
 
+/* Extra Small Mobile */
 @media (max-width: 480px) {
   .trade-fairs-gallery {
     padding: 3rem 0;
@@ -324,68 +331,63 @@
   }
 
   .slide-image-wrapper {
-    height: 250px;
-    border-radius: 1rem;
+    max-width: 92%;
+    height: 340px;
   }
 
-  .swiper-wrapper-container {
-    padding: 2rem 0;
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .swiper-button-prev-custom svg,
+  .swiper-button-next-custom svg {
+    width: 18px;
+    height: 18px;
   }
 
   .cta-button {
     padding: 1rem 2rem;
     font-size: 0.95rem;
   }
+
+  .view-text {
+    font-size: 1.1rem;
+  }
 }
 
-/* Mobile Stack Effect */
-/* Responsive - Mobile */
-@media (max-width: 767px) {
-  .events-swiper {
-    overflow: visible !important;
-  }
-
-  .swiper-slide {
-    width: 85% !important;
-    opacity: 0.5;
-    transform: scale(0.85);
-    transition: all 0.4s ease;
-  }
-
-  .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 10;
-  }
-
-  .swiper-slide-prev,
-  .swiper-slide-next {
-    opacity: 0.4;
-    transform: scale(0.8);
-  }
-
+/* Extra Extra Small */
+@media (max-width: 360px) {
   .slide-image-wrapper {
-    height: 280px;
+    max-width: 95%; 
+    height: 300px;
+  }
+
+  .gallery-title {
+    font-size: 1.75rem;
   }
 }
 
-/* Tablet & Desktop - 3D Coverflow */
+/* TABLET + DESKTOP (768px+) - Coverflow */
 @media (min-width: 768px) {
+  /* Coverflow слики */
   .swiper-slide {
-    width: 400px !important;
-  }
-
-  .slide-image-wrapper {
-    height: 350px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .swiper-slide {
-    width: 450px !important;
+    width: 450px;
   }
 
   .slide-image-wrapper {
     height: 400px;
+  }
+}
+
+/* Desktop Large */
+@media (min-width: 1024px) {
+  .swiper-slide {
+    width: 480px;
+  }
+
+  .slide-image-wrapper {
+    height: 420px;
   }
 }

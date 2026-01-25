@@ -1,5 +1,5 @@
 import { useLanguage } from '../../hooks/useLanguage';
-import { ArrowRight, Users, Target, Award } from 'lucide-react';
+import { ArrowRight, Users, Target, Award, Mail } from 'lucide-react';
 import './AboutHero.css';
 import aboutHeroImage from '../../assets/lkw connect photo.jpeg';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom';
 
 export const AboutHero: React.FC = () => {
   const { t } = useLanguage();
+
+   const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="about-hero">
@@ -70,6 +75,19 @@ export const AboutHero: React.FC = () => {
               {t('about.hero.cta')}
               <ArrowRight className="cta-icon" />
               </Link>
+
+               {/* Circular Contact Shortcut */}
+          <div className="contact-shortcut">
+            <button 
+              onClick={scrollToContact}
+              className="contact-button"
+              aria-label="Contact us"
+            >
+               <Mail/>
+              {/* <Mail className="contact-icon" /> */}
+            </button>
+            {/* <span className="contact-label">Contact</span> */}
+          </div>
 
           </div>
         </div>

@@ -173,6 +173,56 @@
   transform: translateX(4px);
 }
 
+ /* Contact Shortcut */
+.contact-shortcut {
+  display: flex;
+  position: fixed;
+  bottom: 3rem;
+  right: 4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.contact-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px);  */
+  background: rgba(0, 0, 0, 0.35); /* наместо blur */
+  backdrop-filter: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  outline: none;
+}
+
+.contact-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-icon {
+  width: 2rem;
+  height: 2rem;
+  /* color: #B784A7; */
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+   stroke: currentColor; 
+  fill: none; 
+}
+
+.contact-button:hover .contact-icon {
+  color: #B784A7;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .about-hero {
@@ -191,6 +241,14 @@
   .about-hero-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+   .contact-shortcut {
+    position: fixed; 
+    right: 1.5rem; 
+    bottom: 4rem; 
+    margin-left: 0;
+    z-index: 12; 
   }
 }
 
@@ -236,6 +294,21 @@
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
   }
+
+    .contact-shortcut {
+    right: 1.5rem;
+    bottom: 4rem; 
+  }
+
+  .contact-button {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .contact-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -264,5 +337,30 @@
   
   .stat-content {
     align-items: center;
+  }
+
+   .contact-shortcut {
+    right: 1rem;
+    bottom: 4rem;
+  }
+
+  .contact-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {  
+  .contact-shortcut {
+    position: fixed; 
+    right: 1.5rem; 
+    bottom: 4rem; 
+    margin-left: 0;
+    z-index: 12; 
   }
 }

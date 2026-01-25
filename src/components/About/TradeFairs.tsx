@@ -1,25 +1,14 @@
-
 import 'swiper/css';
-
 import 'swiper/css/navigation';
-
 import 'swiper/css/pagination';
-
 import 'swiper/css/effect-coverflow';
 import { useLanguage } from '../../hooks/useLanguage';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow} from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { ArrowRight } from 'lucide-react';
-
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/effect-coverflow';  
 
 import './TradeFairs.css';
 
-// 👇 ДОДАЈ ГИ ТВОИТЕ СЛИКИ ОВДЕ - ЗАМЕНИ ГИ ПАТЕКИТЕ
 import eventPhoto1 from '../../assets/community event photo 1.jpeg';
 import eventPhoto2 from '../../assets/community event photo 2.jpeg';
 import eventPhoto3 from '../../assets/community event photo 3.jpeg';
@@ -32,7 +21,6 @@ import eventPhoto8 from '../../assets/community event photo 8.jpeg';
 export default function TradeFairs() {
   const { t } = useLanguage();
 
-  // 👇 ДОДАЈ ПОВЕЌЕ СЛИКИ АКО САКАШ
   const eventPhotos = [
     { id: 1, image: eventPhoto1, alt: 'Transport Logistic Event' },
     { id: 2, image: eventPhoto2, alt: 'Logistics Europe' },
@@ -57,120 +45,71 @@ export default function TradeFairs() {
 
         {/* Swiper Slider */}
         <div className="swiper-wrapper-container">
-          {/* <Swiper
+          <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-            effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView="auto"
-            coverflowEffect={{
-              rotate: 15,
-              stretch: 0,
-              depth: 200,
-              modifier: 1,
-              slideShadows: true,
-            }}
+            loop={true}
+            speed={800}
             navigation={{
               nextEl: '.swiper-button-next-custom',
               prevEl: '.swiper-button-prev-custom',
             }}
             pagination={{
+              el: '.swiper-pagination',
               clickable: true,
               dynamicBullets: true,
             }}
             autoplay={{
-              delay: 4000,
+              delay: 2500,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            loop={true}
-            speed={800}
+           observer={true}
+           observeParents={true}
+           updateOnWindowResize={true}
+           effect="coverflow"
+           slidesPerView="auto"
+
+            coverflowEffect={{
+              rotate: 20,
+              stretch: 0,
+              depth: 250,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            // BREAKPOINTS - Мобилен vs Desktop
             breakpoints={{
-              320: {
+              // Мобилен (0-767px) - Обичен carousel
+              0: {
+                effect: 'slide',
                 slidesPerView: 1,
+                width: null,
                 spaceBetween: 20,
-                effect: 'slide',
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 0,
+                  modifier: 1,
+                  slideShadows: false,
+                },
               },
+              // Tablet + Desktop (768px+) - Coverflow
               768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-                effect: 'slide',
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
                 effect: 'coverflow',
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+                coverflowEffect: {
+                  rotate: 20,
+                  stretch: 0,
+                  depth: 250,
+                  modifier: 1,
+                  slideShadows: true,
+                },
               },
             }}
             className="events-swiper"
-          > */}
-<Swiper
-  modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-  effect="coverflow"
-  grabCursor={true}
-  centeredSlides={true}
-  slidesPerView="auto"
-  coverflowEffect={{
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  }}
-  navigation={{
-    nextEl: '.swiper-button-next-custom',
-    prevEl: '.swiper-button-prev-custom',
-  }}
-  pagination={{
-    clickable: true,
-    dynamicBullets: true,
-  }}
-  autoplay={{
-    delay: 2000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  }}
-  loop={true}
-  speed={800}
-  breakpoints={{
-    320: {
-      effect: 'slide',
-      slidesPerView: 1.15,
-      spaceBetween: 15,
-      centeredSlides: true,
-      
-    },
-    640: {
-      effect: 'slide',
-      slidesPerView: 1.8,
-      spaceBetween: 20,
-      centeredSlides: true,
-    },
-    768: {
-      effect: 'coverflow',
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 15,
-        stretch: 0,
-        depth: 200,
-        modifier: 1,
-        slideShadows: true,
-      },
-    },
-    1024: {
-      effect: 'coverflow',
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 20,
-        stretch: 0,
-        depth: 250,
-        modifier: 1,
-        slideShadows: true,
-      },
-    },
-  }}
-  className="events-swiper"
->
+          >
             {eventPhotos.map((photo) => (
               <SwiperSlide key={photo.id}>
                 <div className="event-slide">
@@ -178,7 +117,6 @@ export default function TradeFairs() {
                     <img 
                       src={photo.image} 
                       alt={photo.alt}
-                      loading="lazy"
                     />
                     <div className="slide-overlay">
                       <div className="overlay-content">
@@ -201,6 +139,9 @@ export default function TradeFairs() {
                 <path d="M9 18l6-6-6-6"/>
               </svg>
             </div>
+
+            {/* Pagination */}
+            <div className="swiper-pagination"></div>
           </Swiper>
         </div>
 
