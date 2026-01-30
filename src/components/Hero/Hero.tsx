@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import './Hero.css';
-import heroImage from '../../assets/bus photo.jpeg';
+import heroImage from '../../assets/hero.jpg';
 import heroImage1 from '../../assets/lkw connect photo.jpeg';
 import heroImage2 from '../../assets/lkw connect logo photo.jpeg';
 
