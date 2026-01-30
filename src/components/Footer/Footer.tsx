@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
     'services.international.title',
     'services.express.title',
     'services.specialized.title',
-    'services.consulting.title'
+    'services.consulting.title',
   ];
 
   return (
@@ -169,7 +169,7 @@ export const Footer: React.FC = () => {
     <Phone style={{ color: "#bd73b0", marginRight: '10px' }} />
     <div className="contact-text">
       <p style={{ margin: 0, fontWeight: 'bold' }}>+38978475744</p>
-      <span style={{ fontSize: '0.85em', opacity: 0.8 }}>Mo-Fr 8:00-18:00</span>
+      <span style={{ fontSize: '0.85em', opacity: 0.9 }}>Mo-Fr 8:00-18:00</span>
     </div>
   </a>
 </div>
@@ -187,7 +187,7 @@ export const Footer: React.FC = () => {
       <Mail style={{ color: "#bd73b0", marginRight: '10px' }} />
       <div className="contact-text">
         <p style={{ margin: 0, fontWeight: 'bold' }}>lkwconnectbg@gmail.com</p>
-        <span style={{ fontSize: '0.85em', opacity: 0.8 }}>8-18h response</span>
+        <span style={{ fontSize: '0.85em', opacity: 0.9 }}>8-18h response</span>
       </div>
     </a>
   </div>
@@ -247,15 +247,17 @@ export const Footer: React.FC = () => {
     
     <div className="map-overlay">
       <div className="map-info">
-        <h4>Посетете ја нашата канцеларија</h4>
-        <p>Тодор Јанев 5, 1400 Велес</p>
+        {/* <h4>Посетете ја нашата канцеларија</h4> */}
+          <h4>{t('contact.office.visit')}</h4>
+         <p>{t('footer.addressLine1')}</p>
+         <p>{t('footer.addressLine2')}</p>
         <a 
           href="https://www.google.com/maps/search/?api=1&query=Todor+Janev+5+Veles+Macedonia"
           target="_blank" 
           rel="noopener noreferrer"
           className="map-directions"
         >
-          Насоки за движење (Directions)
+          {t('contact.office.directions')}
         </a>
       </div>
     </div>

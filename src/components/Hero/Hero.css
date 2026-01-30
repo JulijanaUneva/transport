@@ -164,10 +164,33 @@
   outline: none;
 }
 
-.contact-button:hover {
+/* .contact-button:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.1);
   border-color: rgba(255, 255, 255, 0.5);
+} */
+
+/* .contact-button:hover {
+  background: rgba(189, 115, 176, 0.15);  
+  transform: scale(1.1);
+  border-color: #bd73b0; 
+}
+
+.contact-button:hover svg {
+  color: #bd73b0;
+  stroke: #bd73b0;
+} */
+
+.contact-button:hover {
+  background: rgba(189, 115, 176, 0.25);  
+  transform: scale(1.15);  /* Поголем zoom */
+  border-color: #bd73b0;
+  box-shadow: 0 8px 25px rgba(189, 115, 176, 0.3); 
+}
+
+.contact-button:hover svg {
+  color: #ba65ab;
+  stroke: #bd73b0;
 }
 
 .contact-icon {
@@ -179,9 +202,9 @@
    stroke: currentColor; 
 }
 
-.contact-button:hover .contact-icon {
+/* .contact-button:hover .contact-icon {
   color: #B784A7;
-}
+} */
 
 .contact-label {
   color: white;

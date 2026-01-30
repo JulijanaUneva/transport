@@ -243,6 +243,8 @@ export type TranslationKeys =
   | 'stats.vehicles'
   | 'footer.addressLine1'
   | 'footer.addressLine2'
+  | 'contact.office.visit'
+  | 'contact.office.directions'
   | 'stats.countries';
 
 export interface NavItem {
