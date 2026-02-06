@@ -1,7 +1,7 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { ArrowRight, Users, Target, Award, Mail } from 'lucide-react';
 import './AboutHero.css';
-import aboutHeroImage from '../../assets/lkw connect photo.jpeg';
+import aboutHeroImage from '../../assets/aboutus1.png';
 import { Link } from 'react-router-dom';
 
 

@@ -1,6 +1,7 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import './TeamSection.css';
+import MarijaImg from '/src/assets/marijacrop.png';
 
 export default function TeamSection() {
   const { t } = useLanguage();
@@ -8,7 +9,7 @@ export default function TeamSection() {
   const teamMembers = [
     {
       id: 1,
-      name: "Marcus Weber",
+      name: "Iva Novakova",
       position: t('about.team.member1.position'),
       bio: t('about.team.member1.bio'),
       email: "marcus.weber@LKW-connect-transport.de",
@@ -18,13 +19,13 @@ export default function TeamSection() {
     },
     {
       id: 2,
-      name: "Elena Müller",
+      name: "Marija Vasileva",
       position: t('about.team.member2.position'),
       bio: t('about.team.member2.bio'),
       email: "elena.mueller@transport.de",
       phone: "+49 123 456 790",
       linkedin: "#",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face"
+      image: MarijaImg
     }
   ];
 

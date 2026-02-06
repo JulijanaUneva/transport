@@ -3,6 +3,9 @@ import { Truck, Package, Globe, Clock, Shield, Users } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { ServiceCard } from '../../types';
 import './Services.css';
+import lagerImg from '/src/assets/lager1.png';
+import internationalImg from '/src/assets/international.png';
+
 
 export const Services: React.FC = () => {
   const { t } = useLanguage();
@@ -24,7 +27,7 @@ export const Services: React.FC = () => {
       id: 'logistics',
       title: t('services.logistics.title'),
       description: t('services.logistics.description'),
-      image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+      image: lagerImg,
       features: [
         t('services.logistics.feature1'),
         t('services.logistics.feature2'),
@@ -36,7 +39,7 @@ export const Services: React.FC = () => {
       id: 'international',
       title: t('services.international.title'),
       description: t('services.international.description'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+      image: internationalImg,
       features: [
         t('services.international.feature1'),
         t('services.international.feature2'),

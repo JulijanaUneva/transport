@@ -1,6 +1,7 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { Shield, Clock, Globe, Heart, Star, Zap } from 'lucide-react';
 import './CompanyOverview.css';
+import ourCompanyImg from '/src/assets/ourCompany1.png';
 
 export default function CompanyOverview() {
   const { t } = useLanguage();
@@ -73,13 +74,13 @@ export default function CompanyOverview() {
             </div>
             <div className="story-image">
               <img 
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop" 
+                src={ourCompanyImg}
                 alt="LKW CONNECT Transport Fleet"
                 className="story-img"
               />
               <div className="image-overlay">
                 <div className="overlay-content">
-                  <h4>25+ Years</h4>
+                  <h4>10+ Years</h4>
                   <p>of Excellence in Transport</p>
                 </div>
               </div>
