@@ -1,18 +1,19 @@
-import React from 'react';
+// import React from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
-import { 
-  Shield, Clock, Award, CheckCircle, Heart, Star, Zap, Handshake
-} from 'lucide-react';
+// import { 
+//   Shield, Clock, Award, CheckCircle, Heart, Star, Zap, Handshake
+// } from 'lucide-react';
+import { CheckCircle, Handshake} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './WorkingWithUs.css';
 
-// 1. ДЕФИНИРАЊЕ НА ТИПОВИ (За TypeScript да биде среќен)
-interface MarqueeItem {
-  icon?: React.ElementType; // Ова прифаќа било која React компонента (икона)
-  text?: string;
-  name?: string;
-  desc?: string;
-}
+// 1. ДЕФИНИРАЊЕ НА ТИПОВИ 
+// interface MarqueeItem {
+//   icon?: React.ElementType; 
+//   text?: string;
+//   name?: string;
+//   desc?: string;
+// }
 
 interface PartnershipType {
   title: string;
@@ -24,56 +25,48 @@ export default function WorkingWithUs() {
   const { t } = useLanguage();
 
   // 2. ПОДАТОЦИ ЗА ДВИЖЕЧКИТЕ КАРТИЧКИ
-  const topRow: MarqueeItem[] = [
-  { 
-    icon: Shield, 
-    text: t('about.values.reliability.title'), 
-    desc: t('about.values.reliability.description') // Твојот веќе постоечки опис
-  },
-  { 
-    icon: Clock, 
-    text: t('about.values.punctuality.title'), 
-    desc: t('about.values.punctuality.description') 
-  },
-  { 
-    icon: Heart, 
-    text: t('about.values.customerCare.title'), 
-    desc: t('about.values.customerCare.description') 
-  },
-  { 
-    icon: Zap, 
-    text: t('about.values.innovation.title'), 
-    desc: t('about.values.innovation.description') 
-  },
-  { 
-    icon: Award, 
-    text: t('about.working.benefits.qualityAssurance.title'), 
-    desc: t('about.working.benefits.qualityAssurance.description') 
-  },
-  { 
-    icon: Star, 
-    text: t('about.values.excellence.title'), 
-    desc: t('about.values.excellence.description') 
-  },
-];
-  // const topRow: MarqueeItem[] = [
-  //   { icon: Shield, text: t('about.values.reliability.title') },
-  //   { icon: Clock, text: t('about.values.punctuality.title') },
-  //   { icon: Heart, text: t('about.values.customerCare.title') },
-  //   { icon: Zap, text: t('about.values.innovation.title') },
-  //   { icon: Award, text: t('about.working.benefits.qualityAssurance.title') },
-  //   { icon: Star, text: t('about.values.excellence.title') },
+//   const topRow: MarqueeItem[] = [
+//   { 
+//     icon: Shield, 
+//     text: t('about.values.reliability.title'), 
+//     desc: t('about.values.reliability.description') 
+//   },
+//   { 
+//     icon: Clock, 
+//     text: t('about.values.punctuality.title'), 
+//     desc: t('about.values.punctuality.description') 
+//   },
+//   { 
+//     icon: Heart, 
+//     text: t('about.values.customerCare.title'), 
+//     desc: t('about.values.customerCare.description') 
+//   },
+//   { 
+//     icon: Zap, 
+//     text: t('about.values.innovation.title'), 
+//     desc: t('about.values.innovation.description') 
+//   },
+//   { 
+//     icon: Award, 
+//     text: t('about.working.benefits.qualityAssurance.title'), 
+//     desc: t('about.working.benefits.qualityAssurance.description') 
+//   },
+//   { 
+//     icon: Star, 
+//     text: t('about.values.excellence.title'), 
+//     desc: t('about.values.excellence.description') 
+//   },
+// ];
+
+  // const bottomRow: MarqueeItem[] = [
+  //   { name: "ISO 9001", desc: t('about.certifications.iso9001') },
+  //   { name: "ISO 14001", desc: t('about.certifications.iso14001') },
+  //   { name: "GDPR", desc: t('about.certifications.gdpr') },
+  //   { name: "ADR", desc: t('about.certifications.adr') },
+  //   { name: "Global", desc: t('about.values.globalReach.title') },
   // ];
 
-  const bottomRow: MarqueeItem[] = [
-    { name: "ISO 9001", desc: t('about.certifications.iso9001') },
-    { name: "ISO 14001", desc: t('about.certifications.iso14001') },
-    { name: "GDPR", desc: t('about.certifications.gdpr') },
-    { name: "ADR", desc: t('about.certifications.adr') },
-    { name: "Global", desc: t('about.values.globalReach.title') },
-  ];
-
-  // 3. ПОДАТОЦИ ЗА ПАРТНЕРСТВА (Овој дел не го менуваме визуелно)
+  // 3. ПОДАТОЦИ ЗА ПАРТНЕРСТВА 
   const partnershipTypes: PartnershipType[] = [
     {
       title: t('about.working.partnerships.sme.title'),
@@ -108,59 +101,30 @@ export default function WorkingWithUs() {
   ];
 
   // 4. ФУНКЦИЈА ЗА РЕНДЕРИРАЊЕ СО ТИПИЗИРАНИ ПАРАМЕТРИ
-  const renderTrack = (items: MarqueeItem[], type: 'lila' | 'green') => {
-  const doubledItems = [...items, ...items, ...items, ...items];
-  return doubledItems.map((item, idx) => {
-    const IconComponent = item.icon;
-    
-    return (
-      <div key={idx} className={`trust-card ${type}`}>
-        {/* Header: Икона + Наслов */}
-        <div className="card-header">
-          {IconComponent ? (
-            <>
-              <div className="icon-wrapper">
-                <IconComponent size={24} />
-              </div>
-              <span className="card-title">{item.text}</span>
-            </>
-          ) : (
-            <div className="cert-container">
-               <div className="cert-badge">{item.name}</div>
-            </div>
-          )}
-        </div>
-        
-        {/* Content: Описот е веднаш тука, чист и читлив */}
-        {item.desc && (
-          <div className="card-description">
-            <p>{item.desc}</p>
-          </div>
-        )}
-      </div>
-    );
-  });
-};
-//   const renderTrack = (items: MarqueeItem[], type: 'lila' | 'green') => {
-//   const doubledItems = [...items, ...items, ...items, ...items];
-//   return doubledItems.map((item, idx) => {
-//     const IconComponent = item.icon;
+  // const renderTrack = (items: MarqueeItem[], type: 'lila' | 'green') => {
+  // const doubledItems = [...items, ...items, ...items, ...items];
+  // return doubledItems.map((item, idx) => {
+  //   const IconComponent = item.icon;
     
 //     return (
 //       <div key={idx} className={`trust-card ${type}`}>
-//         {/* Главниот дел што секогаш се гледа */}
-//         <div className="card-main-content">
+      
+//         <div className="card-header">
 //           {IconComponent ? (
 //             <>
-//               <IconComponent size={20} />
+//               <div className="icon-wrapper">
+//                 <IconComponent size={24} />
+//               </div>
 //               <span className="card-title">{item.text}</span>
 //             </>
 //           ) : (
-//             <div className="cert-tag">{item.name}</div>
+//             <div className="cert-container">
+//                <div className="cert-badge">{item.name}</div>
+//             </div>
 //           )}
 //         </div>
         
-//         {/* Овој дел ќе се „отвори“ на hover */}
+      
 //         {item.desc && (
 //           <div className="card-description">
 //             <p>{item.desc}</p>
@@ -181,7 +145,7 @@ export default function WorkingWithUs() {
         </div>
 
         {/* Marquee Section (Values & Certs) */}
-        <div className="marquee-trust-container">
+        {/* <div className="marquee-trust-container">
           <div className="marquee-wrapper">
             <div className="marquee-track top-track">
               <div className="marquee-content scroll-right">
@@ -194,7 +158,7 @@ export default function WorkingWithUs() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Partnership Section */}
         <div className="partnership-section">

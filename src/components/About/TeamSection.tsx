@@ -1,7 +1,8 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import './TeamSection.css';
-import MarijaImg from '/src/assets/marijacrop.png';
+import MarijaImg from '/src/assets/marijaWeathergirl.png';
+import IvaImg from '/src/assets/ivaWeathergirl.png';
 
 export default function TeamSection() {
   const { t } = useLanguage();
@@ -12,18 +13,18 @@ export default function TeamSection() {
       name: "Iva Novakova",
       position: t('about.team.member1.position'),
       bio: t('about.team.member1.bio'),
-      email: "marcus.weber@LKW-connect-transport.de",
-      phone: "+49 123 456 789",
+      email: "lkwconnectbg@gmail.com",
+      phone: "+389 78 475 744",
       linkedin: "#",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      image: IvaImg
     },
     {
       id: 2,
       name: "Marija Vasileva",
       position: t('about.team.member2.position'),
       bio: t('about.team.member2.bio'),
-      email: "elena.mueller@transport.de",
-      phone: "+49 123 456 790",
+      email: "lkwconnectbg@gmail.com",
+      phone: "+389 78 475 744",
       linkedin: "#",
       image: MarijaImg
     }

@@ -10,110 +10,22 @@
 }
 
 /* Company Story */
-.company-story {
-  margin-bottom: 6rem;
+
+/* ========================================
+   STORY WITH MAP SECTION
+   ======================================== */
+
+.story-with-map {
   background: white;
-  border-radius: 2rem;
-  padding: 4rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.story-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-  padding: 0;
-}
-
-.story-text {
-  max-width: 600px;
-}
-
-.story-paragraphs {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.story-paragraphs p {
-  color: #374151;
-  line-height: 1.8;
-  font-size: 1.05rem;
-}
-
-.story-paragraphs p:first-child::first-letter {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #bd73b0;
-  float: left;
-  line-height: 1;
-  margin-right: 0.5rem;
-}
-
-.story-image {
-  position: relative;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.story-img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.story-image:hover .story-img {
-  transform: scale(1.08);
-}
-
-.image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(88, 28, 135, 0.95), transparent);
-  padding: 2.5rem;
-  color: white;
-}
-
-.overlay-content h4 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #bcd39b;
-}
-
-.overlay-content p {
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-
-/* Mission & Vision */
-.mission-vision {
-  margin-bottom: 6rem;
-}
-
-.mission-vision-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.mv-card {
-  background: white;
-  padding: 3rem;
-  border-radius: 1.5rem;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
+  border-radius: 1.25rem;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.mv-card::before {
+.story-with-map::before {
   content: '';
   position: absolute;
   top: 0;
@@ -123,14 +35,270 @@
   background: linear-gradient(90deg, #bd73b0 0%, #bcd39b 100%);
 }
 
-.mv-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(189, 115, 176, 0.2);
-  border-color: rgba(189, 115, 176, 0.3);
+.story-map-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
 }
 
-.mv-card h3 {
-  font-size: 1.875rem;
+/* LEFT SIDE: Text */
+.story-text-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.story-intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.story-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.story-highlights li {
+  font-size: 0.9rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* RIGHT SIDE: Europe Map */
+.europe-map-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.europe-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* ========================================
+   MAP PINS
+   ======================================== */
+
+.map-pin {
+  position: absolute;
+  z-index: 10;
+}
+
+/* Pin Positions (adjust based on your map image) */
+.pin-macedonia {
+  bottom: 25%;
+  right: 45%;
+}
+
+.pin-germany {
+  top: 35%;
+  left: 40%;
+}
+
+.pin-scandinavia {
+  top: 15%;
+  left: 45%;
+}
+
+/* Pin Dot (Pulsing Circle) */
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  background: #bd73b0;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 0 rgba(189, 115, 176, 0.7);
+  animation: pin-pulse 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes pin-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(189, 115, 176, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(189, 115, 176, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(189, 115, 176, 0);
+  }
+}
+
+/* Tooltips */
+.pin-tooltip {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid #bd73b0;
+}
+
+.pin-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+}
+
+.pin-tooltip strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.pin-tooltip p {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ========================================
+   SEQUENTIAL REVEAL ANIMATION
+   ======================================== */
+
+/* Total cycle: 15s */
+/* 0-3s: Tooltip 1 appears */
+/* 3-6s: Tooltip 2 appears (1 stays) */
+/* 6-9s: Tooltip 3 appears (1+2 stay) */
+/* 9-12s: All visible (pause) */
+/* 12-15s: All fade out */
+
+.tooltip-1 {
+  animation: reveal-1 15s infinite;
+}
+
+.tooltip-2 {
+  animation: reveal-2 15s infinite;
+}
+
+.tooltip-3 {
+  animation: reveal-3 15s infinite;
+}
+
+@keyframes reveal-1 {
+  0%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  3%, 80% {
+    opacity: 1;
+    visibility: visible;
+  }
+  83%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes reveal-2 {
+  0%, 20% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  23%, 80% {
+    opacity: 1;
+    visibility: visible;
+  }
+  83%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes reveal-3 {
+  0%, 40% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  43%, 80% {
+    opacity: 1;
+    visibility: visible;
+  }
+  83%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .story-map-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .europe-map-container {
+    height: 300px;
+  }
+
+  .pin-tooltip {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* On mobile: show all tooltips always (no animation) */
+  .pin-tooltip {
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+/* .story-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem 3rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #bd73b0 0%, #bcd39b 100%);
+}
+
+.story-title {
+  font-size: 2rem;
   font-weight: 700;
   background: linear-gradient(135deg, #bd73b0 0%, #581c87 100%);
   -webkit-background-clip: text;
@@ -139,11 +307,179 @@
   margin-bottom: 1.5rem;
 }
 
+.story-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.story-paragraphs p {
+  color: #374151;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.story-paragraphs p:first-child::first-letter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #bd73b0;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+} */
+
+/* ========================================
+   BOTTOM GRID - СЛИКА + MISSION/VISION
+   ======================================== */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Слика поголема */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* СЛИКА - ПОГОЛЕМА */
+.story-image {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-image:hover .story-img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(88, 28, 135, 0.92), transparent);
+  padding: 1.25rem;
+  color: white;
+}
+
+.overlay-content h4 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #bcd39b;
+}
+
+.overlay-content p {
+  font-size: 0.8rem;
+  opacity: 0.95;
+}
+
+/* MISSION/VISION - ПОМАЛИ, СТАКНАТИ */
+.mission-vision-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.mv-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  flex: 1;
+}
+
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #bd73b0 0%, #bcd39b 100%);
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(189, 115, 176, 0.15);
+  border-color: rgba(189, 115, 176, 0.2);
+}
+
+.mv-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #bd73b0 0%, #581c87 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.65rem;
+}
+
 .mv-card p {
   color: #4b5563;
-  line-height: 1.8;
-  font-size: 1.05rem;
+  line-height: 1.45;
+  font-size: 0.8rem;
 }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  /* .story-card {
+    padding: 2rem;
+  }
+
+  .story-title {
+    font-size: 1.75rem;
+  }
+
+  .story-paragraphs p {
+    font-size: 0.9rem;
+  } */
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .story-img {
+    min-height: 300px;
+  }
+
+  .mv-card {
+    padding: 1.5rem;
+  }
+
+  .mv-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .mv-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* @media (max-width: 480px) {
+  .story-card {
+    padding: 1.5rem;
+  }
+
+  .story-paragraphs p:first-child::first-letter {
+    font-size: 2.5rem;
+  }
+} */
 
 /* Company Values */
 .company-values {
@@ -367,5 +703,187 @@
 
   .mv-card {
     padding: 3.5rem;
+  }
+}
+
+/* ============================================
+   MARQUEE SECTION - ПОМАЛИ КАРТИЧКИ
+   ============================================ */
+
+.marquee-section {
+  margin-top: 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.marquee-track {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  width: max-content;
+}
+
+/* ПОМАЛИ КАРТИЧКИ */
+.marquee-card {
+  align-items: center; 
+  text-align: center;
+  width: 280px;
+  min-height: 140px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(189, 115, 176, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.marquee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* PURPLE CARDS (Values) */
+.marquee-card.purple {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.75rem; 
+  border-color: rgba(189, 115, 176, 0.2);
+}
+
+.marquee-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: flex-start; 
+}
+
+.marquee-card.purple:hover {
+  border-color: #bd73b0;
+}
+
+.marquee-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #bd73b0 0%, #581c87 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  margin: 0; 
+}
+
+.marquee-text {
+  width: 100%; 
+}
+
+
+.marquee-text h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  text-align: left;
+}
+
+.marquee-text p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left; 
+  padding-left: 0; 
+}
+
+/* GREEN CARDS (Certifications) */
+.marquee-card.green {
+  border-color: rgba(188, 211, 155, 0.2);
+}
+
+.marquee-card.green:hover {
+  border-color: #bcd39b;
+}
+
+.cert-badge-marquee {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: linear-gradient(135deg, #bcd39b 0%, #6fa025 100%);
+  color: white;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cert-desc-marquee {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* АНИМАЦИИ */
+.scroll-right {
+  animation: scroll-right 40s linear infinite;
+}
+
+.scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+/* ПАУЗА НА HOVER */
+.marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .marquee-card {
+    width: 240px;
+    min-height: 120px;
+    padding: 1.25rem;
+  }
+  
+  .marquee-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .marquee-text h5 {
+    font-size: 0.9rem;
+  }
+  
+  .marquee-text p,
+  .cert-desc-marquee {
+    font-size: 0.8rem;
   }
 }

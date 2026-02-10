@@ -2,6 +2,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { Shield, Clock, Globe, Heart, Star, Zap } from 'lucide-react';
 import './CompanyOverview.css';
 import ourCompanyImg from '/src/assets/ourCompany1.png';
+import europaMap from '/src/assets/europaMap.png';
 
 export default function CompanyOverview() {
   const { t } = useLanguage();
@@ -62,81 +63,146 @@ export default function CompanyOverview() {
     <section className="company-overview">
       <div className="container">
         {/* Company Story */}
-        <div className="company-story">
-          <h2 className="section-title">{t('about.company.title')}</h2>
-          <div className="story-content">
-            <div className="story-text">
-              <div className="story-paragraphs">
-                <p>{t('about.company.story')}</p>
-                <p>{t('about.company.paragraph1')}</p>
-                <p>{t('about.company.paragraph2')}</p>
-              </div>
-            </div>
-            <div className="story-image">
-              <img 
-                src={ourCompanyImg}
-                alt="LKW CONNECT Transport Fleet"
-                className="story-img"
-              />
-              <div className="image-overlay">
-                <div className="overlay-content">
-                  <h4>10+ Years</h4>
-                  <p>of Excellence in Transport</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Company Story with Map */}
+<div className="story-with-map">
+  <h2 className="section-title">{t('about.company.title')}</h2>
+  
+    {/* Left: Text */}
+      <div className="story-map-grid">
+    <div className="story-text-compact">
+      <p className="story-intro">
+        Основана во 2015 година, LKW КОНЕКТ израсна од мала фирма во доверлив логистички партнер низ цела Европа.
+      </p>
+      <ul className="story-highlights">
+        <li>✓ Професионално координирање на возила</li>
+        <li>✓ Активни во Европа и Скандинавија</li>
+        <li>✓ 10+ години искуство</li>
+        <li>✓ Партнерство со водечки компании</li>
+      </ul>
+    </div>
 
-        {/* Mission & Vision */}
-        <div className="mission-vision">
-          <div className="mission-vision-cards">
-            <div className="mv-card">
-              <h3>{t('about.mission.title')}</h3>
-              <p>{t('about.mission.text')}</p>
-            </div>
-            <div className="mv-card">
-              <h3>{t('about.vision.title')}</h3>
-              <p>{t('about.vision.text')}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Company Values */}
-        <div className="company-values">
-          <h2 className="section-title">{t('about.values.title')}</h2>
-          <div className="values-grid">
-            {companyValues.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <div key={index} className="value-card">
-                  <div className="value-icon">
-                    <IconComponent />
-                  </div>
-                  <h4 className="value-title">{value.title}</h4>
-                  <p className="value-description">{value.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="certifications">
-          <h2 className="section-title">{t('about.certifications.title')}</h2>
-          <div className="certifications-grid">
-            {certifications.map((cert, index) => (
-              <div key={index} className="cert-item">
-                <div className="cert-logo">
-                  {cert.name}
-                </div>
-                <h4>{cert.name}</h4>
-                <p>{cert.description}</p>
-              </div>
-            ))}
-          </div>
+    {/* Right: Europe Map with Pins */}
+    <div className="europe-map-container">
+      <img 
+        src={europaMap}
+        alt="Europe Map" 
+        className="europe-map-img"
+      />
+      
+      {/* Pin 1: Macedonia */}
+      <div className="map-pin pin-macedonia">
+        <div className="pin-dot"></div>
+        <div className="pin-tooltip tooltip-1">
+          <strong>📍 Македонија</strong>
+          <p>Наша база</p>
         </div>
       </div>
+
+      {/* Pin 2: Germany */}
+      <div className="map-pin pin-germany">
+        <div className="pin-dot"></div>
+        <div className="pin-tooltip tooltip-2">
+          <strong>📍 Германија</strong>
+          <p>Централна Европа</p>
+        </div>
+      </div>
+
+      {/* Pin 3: Scandinavia */}
+      <div className="map-pin pin-scandinavia">
+        <div className="pin-dot"></div>
+        <div className="pin-tooltip tooltip-3">
+          <strong>📍 Скандинавија</strong>
+          <p>Северна Европа</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+         {/* <div className="story-card">
+        <h2 className="story-title">{t('about.company.title')}</h2>
+        <div className="story-paragraphs">
+          <p>{t('about.company.story')}</p>
+          <p>{t('about.company.paragraph1')}</p>
+          <p>{t('about.company.paragraph2')}</p>
+        </div>
+      </div> */}
+
+      {/* Image + Mission/Vision Grid */}
+      <div className="bottom-grid">
+        {/* Image Section */}
+        <div className="story-image">
+          <img 
+            src={ourCompanyImg}
+            alt="LKW CONNECT Transport Fleet"
+            className="story-img"
+          />
+          <div className="image-overlay">
+            <div className="overlay-content">
+              <h4>10+ Years</h4>
+              <p>of Excellence in Transport</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Mission & Vision Cards */}
+        <div className="mission-vision-stack">
+          <div className="mv-card">
+            <h3>{t('about.mission.title')}</h3>
+            <p>{t('about.mission.text')}</p>
+          </div>
+          <div className="mv-card">
+            <h3>{t('about.vision.title')}</h3>
+            <p>{t('about.vision.text')}</p>
+          </div>
+        </div>
+      </div>    
+
+      </div>
+      {/* NEW MARQUEE SECTION - TEST */}
+<div className="marquee-section">
+  <h2 className="section-title">{t('about.values.title')} & {t('about.certifications.title')}</h2>
+  
+  <div className="marquee-wrapper">
+    {/* ПРВА ЛЕНТА - Values (десно→лево) */}
+    <div className="marquee-track">
+      <div className="marquee-content scroll-right">
+        {[...companyValues, ...companyValues, ...companyValues].map((value, index) => {
+          const IconComponent = value.icon;
+          return (
+            <div key={index} className="marquee-card purple">
+  {/* ИКОНА + НАСЛОВ ВО ИСТ РЕД */}
+  <div className="marquee-header">
+    <div className="marquee-icon">
+      <IconComponent size={20} />
+    </div>
+    <h5>{value.title}</h5>
+  </div>
+  
+  {/* ОПИС ДОЛУ ЦЕНТРИРАН */}
+  <div className="marquee-text">
+    <p>{value.description}</p>
+  </div>
+</div>
+          );
+        })}
+      </div>
+    </div>
+
+    {/* ВТОРА ЛЕНТА - Certifications (лево→десно) */}
+    <div className="marquee-track">
+      <div className="marquee-content scroll-left">
+        {[...certifications, ...certifications, ...certifications, ...certifications].map((cert, index) => (
+          <div key={index} className="marquee-card green">
+            <div className="cert-badge-marquee">
+              {cert.name}
+            </div>
+            <p className="cert-desc-marquee">{cert.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
     </section>
   );
 }
