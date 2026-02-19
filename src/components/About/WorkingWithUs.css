@@ -161,15 +161,101 @@
 }
 
 /* --- ОСТАТОКОТ ОД СТРАНИЦАТА (Партнерства и CTA) --- */
-.partnership-section { margin-top: 80px; }
-.subsection-title { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 2rem; margin-bottom: 40px; color: #1e293b; }
-.partnership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-.partnership-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid #f1f5f9; transition: all 0.3s ease; }
-.partnership-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-.partnership-title { font-size: 1.5rem; color: #bd73b0; margin-bottom: 16px; font-weight: 700; }
-.partnership-description { color: #64748b; margin-bottom: 24px; line-height: 1.6; }
-.partnership-feature { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: #475569; }
-.feature-icon { color: #bcd39b; }
+.partnership-section { 
+  margin-top: 80px; 
+}
+
+.subsection-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #4a4a68;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+
+  /* background: linear-gradient(135deg, #bcd39b 0%, #6fa025 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.partnership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* .partnership-card {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.partnership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+} */
+
+.partnership-card {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  
+  /* ОВИЕ ДВЕ СЕ КЛУЧНИ ЗА ЛИНИЈАТА: */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ЛИНИЈАТА ГОРЕ */
+.partnership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px; /* Дебелина на линијата */
+  background: linear-gradient(90deg, #bd73b0 0%, #bcd39b 100%);
+}
+
+/* HOVER ЕФЕКТОТ */
+.partnership-card:hover {
+  transform: translateY(-5px);
+  /* Ја преземавме сенката и бојата на рамката од другиот елемент */
+  box-shadow: 0 15px 30px rgba(189, 115, 176, 0.15);
+  border-color: rgba(189, 115, 176, 0.2);
+}
+
+.partnership-title {
+  font-size: 1.5rem;
+  color: #bd73b0;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.partnership-description {
+  color: #64748b;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.partnership-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #475569;
+}
+
+.feature-icon {
+  color: #6fa025;
+}
 
 .working-cta {
   margin-top: 80px;
@@ -179,5 +265,25 @@
   text-align: center;
   color: white;
 }
-.primary-button { background: white; color: #bd73b0; padding: 16px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
-.secondary-button { color: white; border: 2px solid white; padding: 14px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; margin-left: 15px; transition: 0.3s; }
+.primary-button {
+  background: white;
+  color: #bd73b0;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.secondary-button {
+  color: white;
+  border: 2px solid white;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 15px;
+  transition: 0.3s;
+}

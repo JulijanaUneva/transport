@@ -64,30 +64,34 @@ export default function CompanyOverview() {
       <div className="container">
         {/* Company Story */}
         {/* Company Story with Map */}
-<div className="story-with-map">
-  <h2 className="section-title">{t('about.company.title')}</h2>
-  
-    {/* Left: Text */}
-      <div className="story-map-grid">
-    <div className="story-text-compact">
-      <p className="story-intro">
-        Основана во 2015 година, LKW КОНЕКТ израсна од мала фирма во доверлив логистички партнер низ цела Европа.
-      </p>
-      <ul className="story-highlights">
-        <li>✓ Професионално координирање на возила</li>
-        <li>✓ Активни во Европа и Скандинавија</li>
-        <li>✓ 10+ години искуство</li>
-        <li>✓ Партнерство со водечки компании</li>
-      </ul>
-    </div>
+        {/* ГЛАВЕН ГРИД КОЈ ГИ ДЕЛИ ЛЕВАТА И ДЕСНАТА СТРАНА */}
+      <div className="story-map-split-layout">
+        
+        {/* ЛЕВО: Бела картичка само со текстот */}
+        <div className="story-card-left">
+          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
+            {t('about.company.title')}
+          </h2>
+          <div className="story-text-compact">
+            <p className="story-intro">
+              Основана во 2015 година, LKW КОНЕКТ израсна од мала фирма во доверлив логистички партнер низ цела Европа.
+            </p>
+            <ul className="story-highlights">
+              <li>✓ Професионално координирање на возила</li>
+              <li>✓ Активни во Европа и Скандинавија</li>
+              <li>✓ 10+ години искуство</li>
+              <li>✓ Партнерство со водечки компании</li>
+            </ul>
+          </div>
+        </div>
 
-    {/* Right: Europe Map with Pins */}
-    <div className="europe-map-container">
-      <img 
-        src={europaMap}
-        alt="Europe Map" 
-        className="europe-map-img"
-      />
+        {/* ДЕСНО: Мапата е надвор и слободна */}
+        <div className="europe-map-container">
+          <img 
+            src={europaMap}
+            alt="Europe Map" 
+            className="europe-map-img"
+          />
       
       {/* Pin 1: Macedonia */}
       <div className="map-pin pin-macedonia">
@@ -157,7 +161,7 @@ export default function CompanyOverview() {
         </div>
       </div>    
 
-      </div>
+      {/* </div> */}
       {/* NEW MARQUEE SECTION - TEST */}
 <div className="marquee-section">
   <h2 className="section-title">{t('about.values.title')} & {t('about.certifications.title')}</h2>
