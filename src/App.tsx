@@ -38,3 +38,10 @@ function App() {
 }
 
 export default App;
+
+  // "scripts": {
+  //   "dev": "vite",
+  //   "build": "tsc -b && vite build",
+  //   "lint": "eslint .",
+  //   "preview": "vite preview"
+  // },

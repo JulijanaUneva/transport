@@ -2,7 +2,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import './TeamSection.css';
 import MarijaImg from '/src/assets/marijaWeathergirl.png';
-import IvaImg from '/src/assets/ivaWeathergirl.png';
+import IvaImg from '/src/assets/IvaPhoto.png';
 
 export default function TeamSection() {
   const { t } = useLanguage();
