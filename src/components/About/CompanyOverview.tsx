@@ -2,7 +2,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { Shield, Clock, Globe, Heart, Star, Zap } from 'lucide-react';
 import './CompanyOverview.css';
 import ourCompanyImg from '/src/assets/ourCompany1.png';
-import europaMap from '/src/assets/europaMap.png';
+import europaMap from '/src/assets/europeMap2Bg.png';
 
 export default function CompanyOverview() {
   const { t } = useLanguage();
@@ -67,25 +67,25 @@ export default function CompanyOverview() {
         {/* ГЛАВЕН ГРИД КОЈ ГИ ДЕЛИ ЛЕВАТА И ДЕСНАТА СТРАНА */}
       <div className="story-map-split-layout">
         
-        {/* ЛЕВО: Бела картичка само со текстот */}
-        <div className="story-card-left">
-          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-            {t('about.company.title')}
-          </h2>
-          <div className="story-text-compact">
-            <p className="story-intro">
-              Основана во 2015 година, LKW КОНЕКТ израсна од мала фирма во доверлив логистички партнер низ цела Европа.
-            </p>
-            <ul className="story-highlights">
-              <li>✓ Професионално координирање на возила</li>
-              <li>✓ Активни во Европа и Скандинавија</li>
-              <li>✓ 10+ години искуство</li>
-              <li>✓ Партнерство со водечки компании</li>
-            </ul>
-          </div>
-        </div>
+       {/* ЛЕВО: Бела картичка само со текстот */}
+<div className="story-card-left">
+  <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
+    {t('about.company.title')}
+  </h2>
+  <div className="story-text-compact">
+    {/* Прв параграф */}
+    <p className="story-intro" style={{ marginBottom: '1rem' }}>
+      {t('about.company.paragraph1')}
+    </p>
+    
+    {/* Втор параграф */}
+    <p className="story-intro">
+      {t('about.company.paragraph2')}
+    </p>
+  </div>
+</div>
 
-        {/* ДЕСНО: Мапата е надвор и слободна */}
+        {/* ДЕСНО: Мапа*/}
         <div className="europe-map-container">
           <img 
             src={europaMap}

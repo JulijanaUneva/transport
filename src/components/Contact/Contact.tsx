@@ -257,7 +257,7 @@ import emailjs from '@emailjs/browser';
 import type { ContactFormData } from '../../types';
 import './Contact.css';
 
-// 🔑 ЗАМЕНЕТЕ ГИ ОВИЕ СО ВАШИТЕ ВРЕДНОСТИ ОД EmailJS
+// 🔑 ЗАМЕНИ СО ВРЕДНОСТИ ОД EmailJS
 const EMAILJS_SERVICE_ID = 'service_isa57ra'; // пр: service_abc123
 const EMAILJS_TEMPLATE_ID = 'template_tr18tfi'; // пр: template_xyz789
 const EMAILJS_PUBLIC_KEY = 'mH2r_f1vxXhc6ryCM'; // пр: aBcDeFgHiJkLmN

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { NavItem } from '../../types';
@@ -12,25 +12,27 @@ export const Header: React.FC = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const { currentLanguage, availableLanguages, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleLanguage = () => setIsLanguageOpen(!isLanguageOpen);
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
-    
-    // If it's an anchor link and we're not on home page, navigate to home first
-    if (href.startsWith('#') && location.pathname !== '/') {
-      window.location.href = '/' + href;
-    } else if (href.startsWith('#')) {
-      // We're on home page, just scroll to section
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+
+  if (href.startsWith('#')) {
+    if (location.pathname === '/') {
+      // Ако сме веќе на Home, само скролај веднаш
+      const id = href.replace('#', '');
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/' + href); 
     }
-    // For regular routes, React Router will handle navigation
-  };
+  } else {
+    // Оди на /about
+    navigate(href);
+  }   
+};
 
   const handleHomeClick = (e: React.MouseEvent) => {
     setIsMenuOpen(false);

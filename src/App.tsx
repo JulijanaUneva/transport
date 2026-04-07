@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import About from './pages/About';
 import './App.css';
 import { ScrollToHash } from './ScrollToHash';
+// import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (

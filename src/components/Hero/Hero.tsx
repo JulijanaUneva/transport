@@ -64,14 +64,14 @@ export const Hero: React.FC = () => {
             </p>
             <div className="hero-actions">
               <button 
-                onClick={scrollToServices}
+                onClick={scrollToContact}
                 className="hero-cta-primary"
               >
                 {t('hero.cta')}
                 <ArrowRight className="cta-icon" />
               </button>
               <button 
-                onClick={scrollToContact}
+                onClick={scrollToServices}
                 className="hero-cta-secondary"
               >
                 {t('hero.learnMore')}

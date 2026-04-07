@@ -4,9 +4,32 @@ import { useLanguage } from '../../hooks/useLanguage';
 import type { TranslationKeys } from '../../types';
 import './Footer.css';
 import logoImage from '../../assets/logo-removebg-preview.png';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      if (location.pathname === '/') {
+        const id = href.replace('#', '');
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Ако сме на About, оди на почетна + хашот (ScrollToHash ќе го заврши останатото)
+        navigate('/' + href);
+      }
+    } 
+    // Ако е обичен линк (на пр. / или /about)
+    else if (href.startsWith('/')) {
+      e.preventDefault();
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   // const socialLinks = [
   //   { icon: Facebook, href: '#', label: 'Facebook' },
@@ -38,12 +61,12 @@ export const Footer: React.FC = () => {
   }
 ];
 
-  const quickLinks: Array<{ labelKey: TranslationKeys; href: string }> = [
-    { labelKey: 'nav.home', href: '/' },
-    { labelKey: 'nav.services', href: '#services' },
-    { labelKey: 'nav.about', href: '/about' },
-    { labelKey: 'nav.contact', href: '#contact' }
-  ];
+ const quickLinks: Array<{ labelKey: TranslationKeys; href: string }> = [
+   { labelKey: 'nav.home', href: '/' },
+   { labelKey: 'nav.services', href: '#services' },
+   { labelKey: 'nav.about', href: '/about' },
+   { labelKey: 'nav.contact', href: '#contact' }
+ ];
 
   const serviceKeys: TranslationKeys[] = [
     'services.roadTransport.title',
@@ -64,7 +87,10 @@ export const Footer: React.FC = () => {
               <div className="footer-brand">
                 <div className="footer-logo">
                   <a href="#">
-                  <img src={logoImage} alt="LKW Transport" className="logo-image" />
+                  {/* <img src={logoImage} alt="LKW Transport" className="logo-image" /> */}
+                  <a href="/" onClick={(e) => handleNavClick(e, '/')}>
+                   <img src={logoImage} alt="LKW Transport" className="logo-image" />
+                  </a>
                   </a>
                 </div>
                 <p className="footer-description">
@@ -95,7 +121,8 @@ export const Footer: React.FC = () => {
               <ul className="footer-links">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="footer-link">
+                    <a href={link.href} className="footer-link"
+                      onClick={(e) => handleNavClick(e, link.href)}>
                       {t(link.labelKey)}
                     </a>
                   </li>

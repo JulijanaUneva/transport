@@ -3,6 +3,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import './TradeFairs.css';
 
@@ -143,12 +144,19 @@ export default function TradeFairs() {
         </div>
 
         {/* CTA Button */}
+
         <div className="gallery-cta">
+  <Link to="/#contact" className="cta-button">
+    {t('about.tradeFairs.cta.button')}
+    <ArrowRight size={20} />
+  </Link>
+</div>
+        {/* <div className="gallery-cta">
           <a href="/#contact" className="cta-button">
             {t('about.tradeFairs.cta.button')}
             <ArrowRight size={20} />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

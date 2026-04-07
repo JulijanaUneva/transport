@@ -3,15 +3,20 @@ import { ArrowRight, Users, Target, Award, Mail } from 'lucide-react';
 import './AboutHero.css';
 import aboutHeroImage from '../../assets/aboutus1.png';
 import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react'; // Ова е клучниот дел
 
 
 export const AboutHero: React.FC = () => {
   const { t } = useLanguage();
 
-   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
-  };
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+  //  const scrollToContact = () => {
+  //   const contactSection = document.getElementById('contact');
+  //   contactSection?.scrollIntoView({ behavior: 'smooth' });
+  // };
 
   return (
     <section className="about-hero">
@@ -77,17 +82,20 @@ export const AboutHero: React.FC = () => {
               </Link>
 
                {/* Circular Contact Shortcut */}
-          <div className="contact-shortcut">
+               <div className="contact-shortcut">
+               <Link to="/#contact" className="contact-button" aria-label="Contact us">
+                <Mail />
+               </Link>
+               </div>
+          {/* <div className="contact-shortcut">
             <button 
               onClick={scrollToContact}
               className="contact-button"
               aria-label="Contact us"
             >
                <Mail/>
-              {/* <Mail className="contact-icon" /> */}
             </button>
-            {/* <span className="contact-label">Contact</span> */}
-          </div>
+          </div> */}
 
           </div>
         </div>
