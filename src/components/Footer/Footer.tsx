@@ -146,28 +146,6 @@ export const Footer: React.FC = () => {
             <div className="footer-section">
               <h3 className="footer-title">{t('footer.contactInfo')}</h3>
               <div className="contact-info">
-                {/* <div className="contact-item">                 
-                   <MapPin style={{ color: "#bd73b0" }}/>                   
-                  <div className="contact-text">
-                    <p>Hauptstraße 123</p>
-                    <p>12345 Berlin, Germany</p>
-                  </div>
-                </div> */}
-
-                {/* <div className="contact-item">
-    <a 
-      href="https://www.google.com/maps/search/?api=1&query=Hauptstraße+123+Berlin+Germany" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}
-    >
-      <MapPin style={{ color: "#bd73b0", marginRight: '10px' }} />
-      <div className="contact-text">
-        <p style={{ margin: 0 }}>Todor Janev 5</p>
-        <p style={{ margin: 0 }}>1400 Veles, Macedonia</p>
-      </div>
-    </a>
-  </div> */}
 
   <div className="contact-item">
   <a 
@@ -183,14 +161,7 @@ export const Footer: React.FC = () => {
     </div>
   </a>
 </div>
-               
-                {/* <div className="contact-item">
-                   <Phone style={{ color: "#bd73b0" }}/>              
-                  <div className="contact-text">
-                    <p>+49 123 456 7890</p>
-                    <span>Mon-Fri 8:00-18:00</span>
-                  </div>
-                </div> */}
+
                 <div className="contact-item">
   <a href="tel:+491234567890" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
     <Phone style={{ color: "#bd73b0", marginRight: '10px' }} />
@@ -200,14 +171,6 @@ export const Footer: React.FC = () => {
     </div>
   </a>
 </div>
-                
-                {/* <div className="contact-item">
-                  <Mail  style={{ color: "#bd73b0" }}/>             
-                  <div className="contact-text">
-                    <p>info@transportco.com</p>
-                    <span>24/7 response</span>
-                  </div>
-                </div> */}
 
                 <div className="contact-item">
     <a href="mailto:info@transportco.com" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>

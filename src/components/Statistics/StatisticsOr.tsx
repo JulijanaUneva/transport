@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TrendingUp, Users, Truck, Globe } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { Statistic } from '../../types';
@@ -6,45 +6,40 @@ import './Statistics.css';
 
 export const Statistics: React.FC = () => {
   const { t } = useLanguage();
-
-  const [animatedValues, setAnimatedValues] = useState<{ [key: string]: number }>({});
-  const sectionRef = useRef<HTMLElement | null>(null);
-
-  const hasAnimatedRef = useRef(false);
-
-  const statisticsData = useMemo<Statistic[]>(
-    () => [
-      {
-        id: 'years-experience',
-        value: 15,
-        label: t('stats.yearsExperience'),
-        suffix: '+',
-        prefix: ''
-      },
-      {
-        id: 'happy-clients',
-        value: 2500,
-        label: t('stats.happyClients'),
-        suffix: '+',
-        prefix: ''
-      },
-      {
-        id: 'vehicles',
-        value: 120,
-        label: t('stats.vehicles'),
-        suffix: '',
-        prefix: ''
-      },
-      {
-        id: 'countries',
-        value: 28,
-        label: t('stats.countries'),
-        suffix: '',
-        prefix: ''
-      }
-    ],
-    [t]
-  );
+  const [isVisible, setIsVisible] = useState(false);
+  const [animatedValues, setAnimatedValues] = useState<{[key: string]: number}>({});
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  const statisticsData = React.useMemo<Statistic[]>(() => [
+    {
+      id: 'years-experience',
+      value: 15,
+      label: t('stats.yearsExperience'),
+      suffix: '+',
+      prefix: ''
+    },
+    {
+      id: 'happy-clients',
+      value: 2500,
+      label: t('stats.happyClients'),
+      suffix: '+',
+      prefix: ''
+    },
+    {
+      id: 'vehicles',
+      value: 120,
+      label: t('stats.vehicles'),
+      suffix: '',
+      prefix: ''
+    },
+    {
+      id: 'countries',
+      value: 28,
+      label: t('stats.countries'),
+      suffix: '',
+      prefix: ''
+    }
+  ], [t]);
 
   const getStatIcon = (statId: string) => {
     switch (statId) {
@@ -63,15 +58,14 @@ export const Statistics: React.FC = () => {
 
   const animateValue = (id: string, start: number, end: number, duration: number) => {
     const startTime = performance.now();
-
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
-      // easeOutCubic
+      
+      // Easing function (easeOutCubic)
       const easeOutCubic = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.floor(start + (end - start) * easeOutCubic);
-
+      
       setAnimatedValues(prev => ({
         ...prev,
         [id]: currentValue
@@ -81,59 +75,58 @@ export const Statistics: React.FC = () => {
         requestAnimationFrame(animate);
       }
     };
-
     requestAnimationFrame(animate);
   };
 
-  const animateCounters = useCallback(() => {
-    statisticsData.forEach(stat => {
+  const animateCounters = React.useCallback(() => {
+    statisticsData.forEach((stat) => {
       animateValue(stat.id, 0, stat.value, 2000);
     });
   }, [statisticsData]);
 
   useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimatedRef.current) {
-          hasAnimatedRef.current = true;
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
           animateCounters();
         }
       },
-      {
-        threshold: 0.2,
-        rootMargin: '-80px 0px 0px 0px'
-      }
+      { threshold: 0.3 }
     );
 
-    observer.observe(el);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => observer.disconnect();
-  }, [animateCounters]);
+  }, [isVisible, animateCounters]);
 
   return (
     <section ref={sectionRef} className="statistics">
       <div className="statistics-background">
         <div className="statistics-overlay"></div>
       </div>
-
+      
       <div className="container">
         <div className="statistics-header">
           <h2 className="section-title statistics-title">{t('statistics.title')}</h2>
-          <p className="section-subtitle statistics-subtitle">{t('statistics.subtitle')}</p>
+          <p className="section-subtitle statistics-subtitle">
+            {t('statistics.subtitle')}
+          </p>
         </div>
-
+        
         <div className="statistics-grid">
           {statisticsData.map((stat, index) => (
             <div
               key={stat.id}
-              className={`statistic-card ${animatedValues[stat.id] ? 'animate' : ''}`}
+              className={`statistic-card ${isVisible ? 'animate' : ''}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="stat-icon-container">{getStatIcon(stat.id)}</div>
-
+              <div className="stat-icon-container">
+                {getStatIcon(stat.id)}
+              </div>
+              
               <div className="stat-content">
                 <div className="stat-number">
                   {stat.prefix}
@@ -144,12 +137,12 @@ export const Statistics: React.FC = () => {
                 </div>
                 <div className="stat-label">{stat.label}</div>
               </div>
-
+              
               <div className="stat-pulse"></div>
             </div>
           ))}
         </div>
-
+        
         {/* Additional info section */}
         <div className="statistics-info">
           <div className="info-grid">

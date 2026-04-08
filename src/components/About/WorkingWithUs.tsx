@@ -144,22 +144,6 @@ export default function WorkingWithUs() {
           <p className="section-description">{t('about.working.description')}</p>
         </div>
 
-        {/* Marquee Section (Values & Certs) */}
-        {/* <div className="marquee-trust-container">
-          <div className="marquee-wrapper">
-            <div className="marquee-track top-track">
-              <div className="marquee-content scroll-right">
-                {renderTrack(topRow, 'lila')}
-              </div>
-            </div>
-            <div className="marquee-track bottom-track">
-              <div className="marquee-content scroll-left">
-                {renderTrack(bottomRow, 'green')}
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         {/* Partnership Section */}
         <div className="partnership-section">
           <h3 className="subsection-title">

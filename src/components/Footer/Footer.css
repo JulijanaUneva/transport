@@ -337,43 +337,6 @@
   }
 }
 
-/* @media (max-width: 768px) {
-  .footer-main {
-    padding: 3rem 0 2rem;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-  
-  .footer-section:last-child {
-    grid-column: auto;
-    margin-top: 0;
-  }
-  
-  .footer-bottom-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .footer-legal {
-    gap: 1rem;
-  }
-  
-  .map-overlay {
-    position: static;
-    margin: 1rem;
-    max-width: none;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-} */
-
 @media (max-width: 768px) {
   .footer-main {
     padding: 3rem 0 2rem;
@@ -451,47 +414,6 @@
   }
 }
 
-
-/* @media (max-width: 480px) {
-  .footer-main {
-    padding: 2rem 0 1rem;
-  }
-  
-  .footer-content {
-    padding: 0 0.5rem;
-  }
-  
-  .footer-section {
-    gap: 1rem;
-  }
-  
-  .footer-description {
-    font-size: 0.9rem;
-  }
-  
-  .footer-legal {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  
-  .map-overlay {
-    margin: 0.5rem;
-    padding: 1rem;
-  }
-  
-  .contact-item {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  
-  .contact-icon {
-    margin-top: 0;
-    align-self: center;
-  }
-} */
-
 @media (max-width: 480px) {
   .footer-main {
     padding: 2rem 0 1rem;
@@ -539,5 +461,32 @@
   .contact-icon {
     margin-top: 0;
     align-self: center;
+  }
+}
+
+/* Media query специфично за таблети (од 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-section .footer-title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem; 
+    flex-wrap: wrap; 
+  }
+
+  .contact-item {
+    flex: 1;
+    min-width: 200px; 
+    justify-content: center;
+  }
+
+  .contact-text {
+    text-align: left;
   }
 }
