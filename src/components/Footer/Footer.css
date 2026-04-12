@@ -4,7 +4,7 @@
 }
 
 .footer-main {
-  padding: 4rem 0 2rem;
+  padding: 4rem 0 4rem;
 }
 
 .footer-content {
@@ -73,18 +73,6 @@
   letter-spacing: 0.5px;
 }
 
-/* .logo-icon {
-  width: 2rem;
-  height: 2rem;
-  color: #3b82f6;
-} */
-
-/* .logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-} */
-
 .footer-description {
   color: #d1d5db;
   line-height: 1.6;
@@ -152,13 +140,6 @@
     font-weight: bold;
 }
 
-/* .footer-links:hover {
-   color: #bd73b0;
-   transition: color 0.3s ease; 
-   transform: translateY(-2px);
-   font-weight: bold;
-} */
-
 .footer-service {
   color: #d1d5db;
   font-size: 0.9rem;
@@ -179,10 +160,6 @@
   gap: 0.75rem;
  }
 
-/* .contact-item a:hover {
-  opacity: 0.9;
-} */
-
 .contact-item a:hover .contact-text p {
   color: #bd73b0;
   transition: color 0.3s ease; 
@@ -191,14 +168,6 @@
 .contact-item a {
   cursor: pointer;
 }
-
-/* .contact-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #3b82f6;
-  margin-top: 0.125rem;
-  flex-shrink: 0;
-} */
 
 .contact-text p {
   /* color: #525964;  */
@@ -339,7 +308,7 @@
 
 @media (max-width: 768px) {
   .footer-main {
-    padding: 3rem 0 2rem;
+    padding: 3rem 0 3rem;
   }
   
   .footer-content {
@@ -416,7 +385,7 @@
 
 @media (max-width: 480px) {
   .footer-main {
-    padding: 2rem 0 1rem;
+    padding: 2rem 0 2rem;
   }
   
   .footer-content {
